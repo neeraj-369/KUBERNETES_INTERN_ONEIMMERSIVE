@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: timeapp
+spec:
+  selector:
+    matchLabels:
+      app: timeapp
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: timeapp
+    spec:
+      containers:
+      - name: timeapp
+        image: docker.io/neerajpolavarapu/timeapp
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
