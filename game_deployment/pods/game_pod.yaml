@@ -1,0 +1,72 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sps-http-server-maayaverse-5c48cb87bf-5g9z7
+  namespace: tenant-74334f-oidev
+spec:
+  containers:
+  - image: docker.io/tensorworks/sps-http-server:v0.9.10-coreweave
+    imagePullPolicy: Always
+    name: sps-http-server-container
+    ports:
+    - containerPort: 80
+      protocol: TCP
+    resources:
+      limits:
+        cpu: "1"
+        memory: 2Gi
+      requests:
+        cpu: "1"
+        memory: 2Gi
+    volumeMounts:
+    - mountPath: /etc/nginx/sps
+      name: http-config-volume
+  nodeName: gbd53c4
+  nodeSelector:
+    node.coreweave.cloud/class: cpu
+  restartPolicy: Always
+  serviceAccount: default
+  terminationGracePeriodSeconds: 30
+  volumes:
+  - configMap:
+      defaultMode: 420
+      name: sps-http-server-maayaverse
+    name: http-config-volume
+  - name: default-token-4mbv7
+    secret:
+      defaultMode: 420
+      secretName: default-token-4mbv7
+  - hostPath:
+      path: /var/lib/lxcfs/proc/cpuinfo
+      type: File
+    name: lxcfs-proc-cpuinfo1
+  - hostPath:
+      path: /var/lib/lxcfs/proc/diskstats
+      type: File
+    name: lxcfs-proc-diskstats1
+  - hostPath:
+      path: /var/lib/lxcfs/proc/meminfo
+      type: File
+    name: lxcfs-proc-meminfo1
+  - hostPath:
+      path: /var/lib/lxcfs/proc/stat
+      type: File
+    name: lxcfs-proc-stat1
+  - hostPath:
+      path: /var/lib/lxcfs/proc/swaps
+      type: File
+    name: lxcfs-proc-swaps1
+  - hostPath:
+      path: /var/lib/lxcfs/proc/uptime
+      type: File
+    name: lxcfs-proc-uptime1
+  - hostPath:
+      path: /var/lib/lxcfs/proc/loadavg
+      type: File
+    name: lxcfs-proc-loadavg1
+  - hostPath:
+      path: /var/lib/lxcfs/sys/devices/system/cpu/online
+      type: File
+    name: lxcfs-sys-devices-system-cpu-online1
+
+

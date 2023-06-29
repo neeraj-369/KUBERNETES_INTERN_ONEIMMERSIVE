@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sps-signalling-server-maayaverse
+  namespace: tenant-74334f-oidev
+spec:
+  rules:
+    - host: sps.tenant-74334f-oidev.lga1.ingress.coreweave.cloud
+      http:
+        paths:
+          - path: /maayaverse/ws
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: sps-signalling-server-maayaverse
+                port:
+                  number: 1025
+  tls:
+    - hosts:
+        - sps.tenant-74334f-oidev.lga1.ingress.coreweave.cloud
+      secretName: sps-lga1-tls
+status:
+  loadBalancer: {}
+
+ 

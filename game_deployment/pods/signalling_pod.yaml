@@ -1,0 +1,52 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sps-signalling-server-maayaverse-0
+  namespace: tenant-74334f-oidev
+  labels:
+    sps.tensorworks.com.au/ss: maayaverse   # Added label
+spec:
+  containers:
+    - name: signalling-server
+      image: docker.io/tensorworks/sps-signalling-server:v0.9.10-coreweave
+      command:
+        - ./signalling-server
+      ports:
+        - containerPort: 8888
+          protocol: TCP
+        - containerPort: 1025
+          protocol: TCP
+      resources:
+        limits:
+          cpu: "1"
+          memory: 2Gi
+      env:
+        - name: XDG_CONFIG_HOME
+          value: /signalling-server/config
+        - name: SIGNALLING_SERVER_CONFIG_FILENAME
+          value: config-kubernetes.yaml
+        - name: SIGNALLING_SERVER_PEER_CONNECTION_OPTIONS
+          value: '{"iceServers":[{"urls":["stun:stun.l.google.com:19302"]},{"urls":["turn:216.153.62.78:3478"],"username":"sps-coturn-user","credential":"jrxzBNZNGl"}]}'
+        - name: SIGNALLING_SERVER_INSTANCE_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: SIGNALLING_SERVER_INSTANCE_PORT
+          value: "8888"
+        - name: SIGNALLING_SERVER_PLAYER_PORT
+          value: "1025"
+        - name: SIGNALLING_SERVER_AUTHENTICATION_PLUGIN
+          value: sps-auth-maayaverse.tenant-74334f-oidev.svc.cluster.local:55771
+        - name: SIGNALLING_SERVER_INSTANCE_MANAGER_PLUGIN
+          value: sps-instance-manager-maayaverse.tenant-74334f-oidev.svc.cluster.local:55772
+      volumeMounts:
+        - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+          name: default-token-4mbv7
+          readOnly: true
+  volumes:
+    - name: default-token-4mbv7
+      secret:
+        secretName: default-token-4mbv7
+        defaultMode: 420
+
+

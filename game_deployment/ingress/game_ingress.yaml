@@ -1,0 +1,43 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sps-http-server-maayaverse
+  namespace: tenant-74334f-oidev
+spec:
+  rules:
+  - host: sps.tenant-74334f-oidev.lga1.ingress.coreweave.cloud
+    http:
+      paths:
+      - backend:
+          service:
+            name: sps-http-server-maayaverse
+            port:
+              number: 80
+        path: /maayaverse
+        pathType: Prefix
+      - backend:
+          service:
+            name: sps-http-server-maayaverse
+            port:
+              number: 80
+        path: /index.css
+        pathType: Prefix
+      - backend:
+          service:
+            name: sps-http-server-maayaverse
+            port:
+              number: 80
+        path: /index.js
+        pathType: Prefix
+      - backend:
+          service:
+            name: sps-http-server-maayaverse
+            port:
+              number: 80
+        path: /images
+        pathType: Prefix
+  tls:
+  - hosts:
+    - sps.tenant-74334f-oidev.lga1.ingress.coreweave.cloud
+    secretName: sps-lga1-tls
+

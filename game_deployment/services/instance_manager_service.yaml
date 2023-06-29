@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sps-instance-manager-maayaverse
+  namespace: tenant-74334f-oidev
+spec:
+  # clusterIP: None
+  ports:
+  - port: 55772
+    protocol: TCP
+    targetPort: 55772
+  selector:
+    sps.tensorworks.com.au/im: maayaverse
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
+

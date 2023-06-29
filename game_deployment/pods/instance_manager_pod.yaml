@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sps-instance-manager-maayaverse-c6788b6cb-89rt8
+  namespace: tenant-74334f-oidev
+  labels:
+    sps.tensorworks.com.au/im: maayaverse
+spec:
+  containers:
+    - name: sps-instance-manager-container
+      image: docker.io/tensorworks/sps-instance-plugin-kubernetes:v0.9.10-coreweave
+      imagePullPolicy: Always
+      ports:
+        - containerPort: 55772
+          protocol: TCP
+      resources:
+        limits:
+          cpu: 1
+          memory: 2Gi
+        requests:
+          cpu: 1
+          memory: 2Gi
+  dnsPolicy: ClusterFirst
+  nodeName: g30c569
+  nodeSelector:
+    node.coreweave.cloud/class: cpu
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext:
+    seccompProfile:
+      type: RuntimeDefault
+  serviceAccount: sps-instance-manager
+  serviceAccountName: sps-instance-manager
+  terminationGracePeriodSeconds: 30
+
