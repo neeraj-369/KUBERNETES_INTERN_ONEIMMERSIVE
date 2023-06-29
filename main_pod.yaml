@@ -1,0 +1,224 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    cni.projectcalico.org/containerID: 8ec93a0b7db09704065dc141893a0ccc76004f019a60447f8a509dcdc529e140
+    cni.projectcalico.org/podIP: 10.146.93.59/32
+    cni.projectcalico.org/podIPs: 10.146.93.59/32
+    container.apparmor.security.beta.kubernetes.io/sps-http-server-container: runtime/default
+    k8s.v1.cni.cncf.io/network-status: |-
+      [{
+          "name": "",
+          "ips": [
+              "10.146.93.59"
+          ],
+          "default": true,
+          "dns": {}
+      }]
+    k8s.v1.cni.cncf.io/networks-status: |-
+      [{
+          "name": "",
+          "ips": [
+              "10.146.93.59"
+          ],
+          "default": true,
+          "dns": {}
+      }]
+    kubernetes.io/psp: restricted
+    lxcfs-admission-webhook.aliyun.com/status: mutated
+    seccomp.security.alpha.kubernetes.io/pod: docker/default
+  creationTimestamp: "2023-06-09T08:21:53Z"
+  generateName: sps-http-server-maayaverse-5c48cb87bf-
+  labels:
+    app.kubernetes.io/name: maayaverse
+    app.kubernetes.io/version: maayaverse-latestv7
+    pod-template-hash: 5c48cb87bf
+    sps.tensorworks.com.au/application-name: maayaverse
+    sps.tensorworks.com.au/http: maayaverse
+    sps.tensorworks.com.au/version-name: maayaverse-latestv7
+  name: sps-http-server-maayaverse-5c48cb87bf-5g9z7
+  namespace: tenant-74334f-oidev
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: sps-http-server-maayaverse-5c48cb87bf
+    uid: f4a9eda5-d8d6-49da-a730-00f4459fc95c
+  resourceVersion: "38356029188"
+  uid: 306a245e-b558-45fc-93d4-60057c1dbbdf
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/os
+            operator: In
+            values:
+            - linux
+          - key: node.coreweave.cloud/cpu
+            operator: In
+            values:
+            - amd-epyc-milan
+          - key: topology.kubernetes.io/region
+            operator: In
+            values:
+            - ORD1
+            - LGA1
+            - LAS1
+  containers:
+  - image: docker.io/tensorworks/sps-http-server:v0.9.10-coreweave
+    imagePullPolicy: Always
+    name: sps-http-server-container
+    ports:
+    - containerPort: 80
+      protocol: TCP
+    resources:
+      limits:
+        cpu: "1"
+        memory: 2Gi
+      requests:
+        cpu: "1"
+        memory: 2Gi
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /etc/nginx/sps
+      name: http-config-volume
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-4mbv7
+      readOnly: true
+    - mountPath: /proc/cpuinfo
+      name: lxcfs-proc-cpuinfo
+      readOnly: true
+    - mountPath: /proc/meminfo
+      name: lxcfs-proc-meminfo
+      readOnly: true
+    - mountPath: /proc/diskstats
+      name: lxcfs-proc-diskstats
+      readOnly: true
+    - mountPath: /proc/stat
+      name: lxcfs-proc-stat
+      readOnly: true
+    - mountPath: /proc/swaps
+      name: lxcfs-proc-swaps
+      readOnly: true
+    - mountPath: /proc/uptime
+      name: lxcfs-proc-uptime
+      readOnly: true
+    - mountPath: /proc/loadavg
+      name: lxcfs-proc-loadavg
+      readOnly: true
+    - mountPath: /sys/devices/system/cpu/online
+      name: lxcfs-sys-devices-system-cpu-online
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: gbd53c4
+  nodeSelector:
+    node.coreweave.cloud/class: cpu
+  preemptionPolicy: PreemptLowerPriority
+  priority: 1000000
+  priorityClassName: normal
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext:
+    seccompProfile:
+      type: RuntimeDefault
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoSchedule
+    key: node.coreweave.cloud/reserved
+    operator: Equal
+    value: 3f7b5a8be40bc71f2e0671bfc98f47c47e2a7fb5
+  - key: is_cpu_compute
+    operator: Exists
+  volumes:
+  - configMap:
+      defaultMode: 420
+      name: sps-http-server-maayaverse
+    name: http-config-volume
+  - name: default-token-4mbv7
+    secret:
+      defaultMode: 420
+      secretName: default-token-4mbv7
+  - hostPath:
+      path: /var/lib/lxcfs/proc/cpuinfo
+      type: File
+    name: lxcfs-proc-cpuinfo
+  - hostPath:
+      path: /var/lib/lxcfs/proc/diskstats
+      type: File
+    name: lxcfs-proc-diskstats
+  - hostPath:
+      path: /var/lib/lxcfs/proc/meminfo
+      type: File
+    name: lxcfs-proc-meminfo
+  - hostPath:
+      path: /var/lib/lxcfs/proc/stat
+      type: File
+    name: lxcfs-proc-stat
+  - hostPath:
+      path: /var/lib/lxcfs/proc/swaps
+      type: File
+    name: lxcfs-proc-swaps
+  - hostPath:
+      path: /var/lib/lxcfs/proc/uptime
+      type: File
+    name: lxcfs-proc-uptime
+  - hostPath:
+      path: /var/lib/lxcfs/proc/loadavg
+      type: File
+    name: lxcfs-proc-loadavg
+  - hostPath:
+      path: /var/lib/lxcfs/sys/devices/system/cpu/online
+      type: File
+    name: lxcfs-sys-devices-system-cpu-online
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2023-06-09T08:21:53Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2023-06-09T08:22:11Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2023-06-09T08:22:11Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2023-06-09T08:21:53Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: containerd://3f86fc0b1882e627e1b449d5c9e74ca6577651c193edc8f1927a5d0caee9cb16
+    image: docker.io/tensorworks/sps-http-server:v0.9.10-coreweave
+    imageID: docker.io/tensorworks/sps-http-server@sha256:a13986f87dbb384e934d7cdfb24c8af42a746da9725dca32497167b78ff2d566
+    lastState: {}
+    name: sps-http-server-container
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2023-06-09T08:22:10Z"
+  hostIP: 10.139.110.8
+  phase: Running
+  podIP: 10.146.93.59
+  podIPs:
+  - ip: 10.146.93.59
+  qosClass: Guaranteed
+  startTime: "2023-06-09T08:21:53Z"
