@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+spec: 
+  replicas: 2
+  selector:
+    matchLabels: 
+      app: app
+  template: 
+    metadata:
+      name: app-pod
+      labels: 
+        app: app
+    spec: 
+      containers:
+        - name: app-container
+          image: docker.io/codewriter369/metahuman:latest
+          imagePullPolicy: Always
+          # env:
+          #   - name: XDG_RUNTIME_DIR
+          #     value: /tmp/.X11-unix
+          # volumeMounts:
+          #   - name: x11-socket
+          #     mountPath: /tmp/.X11-unix
+          volumeMounts:
+            - mountPath: /etc/nginx/sps
+              name: http-config-volume
+      # volumes:
+      #   - name: x11-socket
+      #     hostPath:
+      #       path: /tmp/.X11-unix
+      volumes:
+      - name: http-config-volume
+      - hostPath:
+          path: /var/lib/lxcfs/proc/cpuinfo
+          type: File
+        name: lxcfs-proc-cpuinfo
+      - hostPath:
+          path: /var/lib/lxcfs/proc/diskstats
+          type: File
+        name: lxcfs-proc-diskstats
+      - hostPath:
+          path: /var/lib/lxcfs/proc/meminfo
+          type: File
+        name: lxcfs-proc-meminfo
+      - hostPath:
+          path: /var/lib/lxcfs/proc/stat
+          type: File
+        name: lxcfs-proc-stat
+      - hostPath:
+          path: /var/lib/lxcfs/proc/swaps
+          type: File
+        name: lxcfs-proc-swaps
+      - hostPath:
+          path: /var/lib/lxcfs/proc/uptime
+          type: File
+        name: lxcfs-proc-uptime
+      - hostPath:
+          path: /var/lib/lxcfs/proc/loadavg
+          type: File
+        name: lxcfs-proc-loadavg
+      - hostPath:
+          path: /var/lib/lxcfs/sys/devices/system/cpu/online
+          type: File
+        name: lxcfs-sys-devices-system-cpu-online
+
+        
