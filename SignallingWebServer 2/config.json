@@ -1,0 +1,19 @@
+{
+	"UseFrontend": false,
+	"UseMatchmaker": true,
+	"UseHTTPS": false,
+	"UseAuthentication": false,
+	"LogToFile": true,
+	"LogVerbose": true,
+	"HomepageFile": "player.html",
+	"AdditionalRoutes": {},
+	"EnableWebserver": true,
+	"MatchmakerAddress": "mm-service",
+	"MatchmakerPort": "9999",
+	"PublicIp": "timeapp.tenant-74334f-oidev.lga1.ingress.coreweave.cloud",
+	"HttpPort": 80,
+	"HttpsPort": 443,
+	"StreamerPort": 8888,
+	"SFUPort": 8889,
+	"MaxPlayerCount": -1
+}

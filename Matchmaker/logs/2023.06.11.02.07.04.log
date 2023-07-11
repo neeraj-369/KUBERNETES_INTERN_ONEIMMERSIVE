@@ -1,0 +1,105 @@
+02:07:04.944 HTTP listening on *:90
+02:07:04.944 Matchmaker listening on *:9999
+02:07:35.458 WARNING: No empty Cirrus servers are available
+02:07:38.570 WARNING: No empty Cirrus servers are available
+02:07:41.676 WARNING: No empty Cirrus servers are available
+02:07:44.781 WARNING: No empty Cirrus servers are available
+02:07:46.650 WARNING: No empty Cirrus servers are available
+02:07:47.887 WARNING: No empty Cirrus servers are available
+02:07:50.993 WARNING: No empty Cirrus servers are available
+02:07:54.100 WARNING: No empty Cirrus servers are available
+02:07:55.470 WARNING: No empty Cirrus servers are available
+02:07:57.306 ERROR (SyntaxError: Unexpected token 'G', "GET / HTTP"... is not valid JSON): Failed to parse Cirrus information from data: GET / HTTP/1.1
+Host: localhost:9999
+Sec-Fetch-Site: none
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Mode: navigate
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15
+Accept-Language: en-IN,en-GB;q=0.9,en;q=0.8
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate
+
+
+02:07:57.306 Ending connection to remote address ::1
+02:07:57.309 ERROR (SyntaxError: Unexpected token 'G', "GET / HTTP"... is not valid JSON): Failed to parse Cirrus information from data: GET / HTTP/1.1
+Host: localhost:9999
+Sec-Fetch-Site: none
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Mode: navigate
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15
+Accept-Language: en-IN,en-GB;q=0.9,en;q=0.8
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate
+
+
+02:07:57.309 Ending connection to remote address ::1
+02:07:57.312 ERROR (SyntaxError: Unexpected token 'G', "GET / HTTP"... is not valid JSON): Failed to parse Cirrus information from data: GET / HTTP/1.1
+Host: localhost:9999
+Sec-Fetch-Site: none
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Mode: navigate
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15
+Accept-Language: en-IN,en-GB;q=0.9,en;q=0.8
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate
+
+
+02:07:57.313 Ending connection to remote address ::1
+02:07:57.339 WARNING: No empty Cirrus servers are available
+02:19:14.843 WARNING: No empty Cirrus servers are available
+02:19:17.962 WARNING: No empty Cirrus servers are available
+02:19:21.067 WARNING: No empty Cirrus servers are available
+02:19:24.170 WARNING: No empty Cirrus servers are available
+02:19:27.272 WARNING: No empty Cirrus servers are available
+02:19:30.369 WARNING: No empty Cirrus servers are available
+02:19:33.471 WARNING: No empty Cirrus servers are available
+02:19:36.575 WARNING: No empty Cirrus servers are available
+02:19:39.679 WARNING: No empty Cirrus servers are available
+02:19:42.782 WARNING: No empty Cirrus servers are available
+02:19:45.879 WARNING: No empty Cirrus servers are available
+02:19:48.985 WARNING: No empty Cirrus servers are available
+02:19:52.094 WARNING: No empty Cirrus servers are available
+02:19:55.197 WARNING: No empty Cirrus servers are available
+02:19:58.301 WARNING: No empty Cirrus servers are available
+02:20:01.411 WARNING: No empty Cirrus servers are available
+02:20:04.509 WARNING: No empty Cirrus servers are available
+02:20:07.612 WARNING: No empty Cirrus servers are available
+02:20:10.710 WARNING: No empty Cirrus servers are available
+02:20:13.794 WARNING: No empty Cirrus servers are available
+02:20:16.897 WARNING: No empty Cirrus servers are available
+02:20:20.005 WARNING: No empty Cirrus servers are available
+02:20:23.109 WARNING: No empty Cirrus servers are available
+02:20:26.214 WARNING: No empty Cirrus servers are available
+02:20:29.327 WARNING: No empty Cirrus servers are available
+02:20:32.301 WARNING: No empty Cirrus servers are available
+02:20:35.406 WARNING: No empty Cirrus servers are available
+02:20:38.509 WARNING: No empty Cirrus servers are available
+02:20:41.610 WARNING: No empty Cirrus servers are available
+02:20:44.717 WARNING: No empty Cirrus servers are available
+02:20:47.825 WARNING: No empty Cirrus servers are available
+02:20:50.935 WARNING: No empty Cirrus servers are available
+02:20:54.043 WARNING: No empty Cirrus servers are available
+02:20:57.148 WARNING: No empty Cirrus servers are available
+02:21:00.254 WARNING: No empty Cirrus servers are available
+02:21:03.362 WARNING: No empty Cirrus servers are available
+02:21:06.464 WARNING: No empty Cirrus servers are available
+02:21:07.499 WARNING: No empty Cirrus servers are available
+02:21:10.599 WARNING: No empty Cirrus servers are available
+02:21:13.704 WARNING: No empty Cirrus servers are available
+02:21:16.808 WARNING: No empty Cirrus servers are available
+02:21:19.906 WARNING: No empty Cirrus servers are available
+02:21:23.012 WARNING: No empty Cirrus servers are available
+02:21:26.115 WARNING: No empty Cirrus servers are available
+02:21:29.227 WARNING: No empty Cirrus servers are available
+02:21:32.331 WARNING: No empty Cirrus servers are available
+02:21:35.437 WARNING: No empty Cirrus servers are available
+02:21:38.541 WARNING: No empty Cirrus servers are available
+02:21:41.654 WARNING: No empty Cirrus servers are available
+02:21:44.758 WARNING: No empty Cirrus servers are available
+02:21:47.859 WARNING: No empty Cirrus servers are available

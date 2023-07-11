@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mm-deployment
+  labels:
+    app: mm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mm
+  template:
+    metadata:
+      labels:
+        app: mm
+    spec:
+      containers:
+      - name: mm-containers
+        image: neerajpolavarapu/mm:mmm
+        # args:  
+        #   - "coturn.tenant-74334f-oidev.lga1.ingress.coreweave.cloud:3478"
+        #   - "PixelStreamingUser"
+        #   - "AnotherTURNintheroad"
+        # image: neerajpolavarapu/ss:sss
+        ports:
+          - containerPort: 9999
+            protocol: TCP
+          - containerPort: 90
+            protocol: TCP
+          - containerPort: 9999
+            protocol: UDP
+          - containerPort: 90
+            protocol: UDP
+
+

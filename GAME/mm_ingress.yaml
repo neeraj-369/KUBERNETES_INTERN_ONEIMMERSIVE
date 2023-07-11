@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mm-ingress
+spec:
+  rules:
+    - host: matchmaking.tenant-74334f-oidev.lga1.ingress.coreweave.cloud
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: mm-service
+                port: 
+                  number: 90
+              
+                  

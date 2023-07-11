@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mm-service
+spec:
+  selector: 
+    app: mm
+  ports:
+    - name: backend-port-tcp
+      protocol: TCP
+      port: 9999
+      targetPort: 9999
+    - name: backend-port-udp
+      protocol: UDP
+      port: 9999
+      targetPort: 9999
+    - name: frontend-port-tcp
+      protocol: TCP
+      port: 90
+      targetPort: 90
+    - name: frontend-port-udp
+      protocol: UDP
+      port: 90
+      targetPort: 90
+
+
+  type: ClusterIP
+
+
