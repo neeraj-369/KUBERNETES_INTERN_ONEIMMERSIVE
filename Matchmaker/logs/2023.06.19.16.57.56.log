@@ -1,0 +1,38 @@
+16:57:56.504 HTTP listening on *:90
+16:57:56.504 Matchmaker listening on *:9999
+16:57:59.050 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:57:59.369 Current status of app-deployment-67y51yb3r7ockql in tenant-74334f-oidev: 0/1
+16:57:59.369 Deployment not available yet
+16:57:59.879 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:00.697 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:01.686 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:02.081 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:02.934 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:03.412 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:04.167 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:04.798 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:05.746 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:06.049 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:06.904 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:07.013 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:08.184 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:08.360 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:09.085 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:09.613 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:10.368 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:10.449 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:11.611 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:11.844 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:12.460 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:13.105 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:13.740 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:13.989 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:14.872 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:14.956 Current status of pixel-streaming-pod-67y51yb3r7ockql: Pending
+16:58:15.697 Current status of pixel-streaming-pod-67y51yb3r7ockql: Running
+16:58:15.697 Pod pixel-streaming-pod-67y51yb3r7ockql in tenant-74334f-oidev is now Running
+16:58:16.050 Current status of app-deployment-67y51yb3r7ockql in tenant-74334f-oidev: 1/1
+16:58:16.050 Deployment app-deployment-67y51yb3r7ockql in tenant-74334f-oidev is now available
+16:58:16.052 1
+16:58:16.209 Current status of pixel-streaming-pod-67y51yb3r7ockql: Running
+16:58:16.209 Pod pixel-streaming-pod-67y51yb3r7ockql in tenant-74334f-oidev is now Running

@@ -1,0 +1,15 @@
+22:39:50.117 HTTP listening on *:90
+22:39:50.117 Matchmaker listening on *:9999
+22:39:53.310 Current status of app-deployment-961yc21oydly5ot in tenant-74334f-oidev: 0/1
+22:39:53.311 Deployment not available yet
+22:39:53.539 Current status of pixel-streaming-pod-961yc21oydly5ot: Pending
+22:39:54.665 Current status of pixel-streaming-pod-961yc21oydly5ot: Pending
+22:39:55.646 Current status of pixel-streaming-pod-961yc21oydly5ot: Pending
+22:39:55.891 Current status of pixel-streaming-pod-961yc21oydly5ot: Pending
+22:39:56.647 Current status of pixel-streaming-pod-961yc21oydly5ot: Pending
+22:39:56.846 Current status of pixel-streaming-pod-961yc21oydly5ot: Pending
+22:39:57.657 Current status of pixel-streaming-pod-961yc21oydly5ot: Pending
+22:39:57.900 Current status of pixel-streaming-pod-961yc21oydly5ot: Pending
+22:39:58.609 Current status of pixel-streaming-pod-961yc21oydly5ot: Pending
+22:39:58.933 Current status of pixel-streaming-pod-961yc21oydly5ot: Running
+22:39:58.933 Pod pixel-streaming-pod-961yc21oydly5ot in tenant-74334f-oidev is now Running

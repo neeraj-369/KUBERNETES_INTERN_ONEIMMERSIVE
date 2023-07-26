@@ -1,0 +1,5 @@
+21:38:06.600 HTTP listening on *:90
+21:38:06.600 Matchmaker listening on *:9999
+21:38:12.613 called
+21:38:14.479 Current status of pixel-streaming-pod-ixhmdpf1td4qg24: Pending
+21:38:15.210 Current status of app-deployment-ixhmdpf1td4qg24 in tenant-74334f-oidev: 0/1

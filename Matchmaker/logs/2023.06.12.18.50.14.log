@@ -1,0 +1,15 @@
+18:50:14.142 HTTP listening on *:90
+18:50:14.142 Matchmaker listening on *:9999
+18:50:15.735 WARNING: No empty Cirrus servers are available
+18:50:17.366 Current status of app-deployment in tenant-74334f-oidev: 0/1
+18:50:17.419 Current status of pixel-streaming-pod: Pending
+18:50:18.253 Current status of pixel-streaming-pod: Pending
+18:50:18.601 Current status of app-deployment in tenant-74334f-oidev: 0/1
+18:50:19.479 Current status of pixel-streaming-pod: Pending
+18:50:19.837 Current status of app-deployment in tenant-74334f-oidev: 0/1
+18:50:20.699 Current status of pixel-streaming-pod: Running
+18:50:20.700 Pod pixel-streaming-pod in tenant-74334f-oidev is now Running
+18:50:20.720 Current status of app-deployment in tenant-74334f-oidev: 0/1
+18:50:21.534 Current status of app-deployment in tenant-74334f-oidev: 0/1
+18:50:22.356 Current status of app-deployment in tenant-74334f-oidev: 1/1
+18:50:22.356 Deployment app-deployment in tenant-74334f-oidev is now available

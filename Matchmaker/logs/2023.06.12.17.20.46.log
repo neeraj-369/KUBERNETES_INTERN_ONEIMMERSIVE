@@ -1,0 +1,6 @@
+17:20:46.211 HTTP listening on *:90
+17:20:46.211 Matchmaker listening on *:9999
+17:20:47.153 WARNING: No empty Cirrus servers are available
+17:20:48.843 Current status of app-deployment in tenant-74334f-oidev: 0/1
+17:20:54.678 Current status of app-deployment in tenant-74334f-oidev: 1/1
+17:20:54.678 Deployment app-deployment in tenant-74334f-oidev is now available

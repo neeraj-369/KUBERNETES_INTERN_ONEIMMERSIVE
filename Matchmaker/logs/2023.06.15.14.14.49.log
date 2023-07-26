@@ -1,0 +1,33 @@
+14:14:49.234 HTTP listening on *:90
+14:14:49.234 Matchmaker listening on *:9999
+14:14:52.590 Current status of app-deployment-694plfugceq2nty in tenant-74334f-oidev: 0/1
+14:14:52.590 Deployment not available yet
+14:14:52.619 Current status of pixel-streaming-pod-694plfugceq2nty: Pending
+14:14:53.966 Current status of pixel-streaming-pod-694plfugceq2nty: Pending
+14:14:54.990 Current status of pixel-streaming-pod-694plfugceq2nty: Pending
+14:14:55.398 Current status of pixel-streaming-pod-694plfugceq2nty: Pending
+14:14:56.229 Current status of pixel-streaming-pod-694plfugceq2nty: Pending
+14:14:56.680 Current status of pixel-streaming-pod-694plfugceq2nty: Pending
+14:14:57.087 Current status of pixel-streaming-pod-694plfugceq2nty: Pending
+14:14:57.519 Current status of pixel-streaming-pod-694plfugceq2nty: Pending
+14:14:58.367 Current status of pixel-streaming-pod-694plfugceq2nty: Pending
+14:14:58.765 Current status of pixel-streaming-pod-694plfugceq2nty: Pending
+14:14:59.627 Current status of pixel-streaming-pod-694plfugceq2nty: Pending
+14:15:00.022 Current status of pixel-streaming-pod-694plfugceq2nty: Pending
+14:15:00.881 Current status of pixel-streaming-pod-694plfugceq2nty: Running
+14:15:00.882 Pod pixel-streaming-pod-694plfugceq2nty in tenant-74334f-oidev is now Running
+14:15:01.341 Current status of pixel-streaming-pod-694plfugceq2nty: Running
+14:15:01.342 Pod pixel-streaming-pod-694plfugceq2nty in tenant-74334f-oidev is now Running
+14:15:01.627 Current status of app-deployment-694plfugceq2nty in tenant-74334f-oidev: 1/1
+14:15:01.628 Deployment app-deployment-694plfugceq2nty in tenant-74334f-oidev is now available
+14:15:01.628 1
+14:15:09.870 this is second tab
+14:15:12.276 this is second tab
+14:15:12.656 this is second tab
+14:15:12.960 this is second tab
+14:15:13.322 this is second tab
+14:15:13.658 this is second tab
+14:15:13.987 this is second tab
+14:15:14.377 this is second tab
+14:15:14.862 this is second tab
+14:15:20.734 this is second tab

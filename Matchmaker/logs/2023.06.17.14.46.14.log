@@ -1,0 +1,23 @@
+14:46:14.517 HTTP listening on *:90
+14:46:14.517 Matchmaker listening on *:9999
+14:46:21.209 Current status of pixel-streaming-pod-d11ee50tgfv8bv9: Pending
+14:46:21.267 Current status of app-deployment-d11ee50tgfv8bv9 in tenant-74334f-oidev: 0/1
+14:46:21.268 Deployment not available yet
+14:46:22.480 Current status of pixel-streaming-pod-d11ee50tgfv8bv9: Pending
+14:46:23.207 Current status of pixel-streaming-pod-d11ee50tgfv8bv9: Pending
+14:46:23.906 Current status of pixel-streaming-pod-d11ee50tgfv8bv9: Pending
+14:46:24.601 Current status of pixel-streaming-pod-d11ee50tgfv8bv9: Pending
+14:46:25.160 Current status of pixel-streaming-pod-d11ee50tgfv8bv9: Pending
+14:46:26.069 Current status of pixel-streaming-pod-d11ee50tgfv8bv9: Pending
+14:46:26.112 Current status of pixel-streaming-pod-d11ee50tgfv8bv9: Pending
+14:46:27.354 Current status of pixel-streaming-pod-d11ee50tgfv8bv9: Pending
+14:46:27.465 Current status of pixel-streaming-pod-d11ee50tgfv8bv9: Pending
+14:46:28.386 Current status of pixel-streaming-pod-d11ee50tgfv8bv9: Pending
+14:46:28.744 Current status of pixel-streaming-pod-d11ee50tgfv8bv9: Pending
+14:46:29.650 Current status of pixel-streaming-pod-d11ee50tgfv8bv9: Running
+14:46:29.651 Pod pixel-streaming-pod-d11ee50tgfv8bv9 in tenant-74334f-oidev is now Running
+14:46:30.027 Current status of pixel-streaming-pod-d11ee50tgfv8bv9: Running
+14:46:30.027 Pod pixel-streaming-pod-d11ee50tgfv8bv9 in tenant-74334f-oidev is now Running
+14:46:30.494 Current status of app-deployment-d11ee50tgfv8bv9 in tenant-74334f-oidev: 1/1
+14:46:30.495 Deployment app-deployment-d11ee50tgfv8bv9 in tenant-74334f-oidev is now available
+14:46:30.495 1

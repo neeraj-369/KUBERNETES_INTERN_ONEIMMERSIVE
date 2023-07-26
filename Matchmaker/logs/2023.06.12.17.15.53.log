@@ -1,0 +1,50 @@
+17:15:53.434 HTTP listening on *:90
+17:15:53.434 Matchmaker listening on *:9999
+17:15:55.620 WARNING: No empty Cirrus servers are available
+17:15:56.539 Deployment created: V1Deployment {
+  apiVersion: 'apps/v1',
+  kind: 'Deployment',
+  metadata: V1ObjectMeta {
+    annotations: undefined,
+    creationTimestamp: 2023-07-12T11:45:56.000Z,
+    deletionGracePeriodSeconds: undefined,
+    deletionTimestamp: undefined,
+    finalizers: undefined,
+    generateName: undefined,
+    generation: 1,
+    labels: { app: 'app' },
+    managedFields: [ [V1ManagedFieldsEntry] ],
+    name: 'app-deployment',
+    namespace: 'tenant-74334f-oidev',
+    ownerReferences: undefined,
+    resourceVersion: '40036216941',
+    selfLink: undefined,
+    uid: 'fd17a36e-3039-4336-893a-6ca2ac62d3b1'
+  },
+  spec: V1DeploymentSpec {
+    minReadySeconds: undefined,
+    paused: undefined,
+    progressDeadlineSeconds: 600,
+    replicas: 1,
+    revisionHistoryLimit: 10,
+    selector: V1LabelSelector {
+      matchExpressions: undefined,
+      matchLabels: [Object]
+    },
+    strategy: V1DeploymentStrategy {
+      rollingUpdate: [V1RollingUpdateDeployment],
+      type: 'RollingUpdate'
+    },
+    template: V1PodTemplateSpec { metadata: [V1ObjectMeta], spec: [V1PodSpec] }
+  },
+  status: V1DeploymentStatus {
+    availableReplicas: undefined,
+    collisionCount: undefined,
+    conditions: undefined,
+    observedGeneration: undefined,
+    readyReplicas: undefined,
+    replicas: undefined,
+    unavailableReplicas: undefined,
+    updatedReplicas: undefined
+  }
+}

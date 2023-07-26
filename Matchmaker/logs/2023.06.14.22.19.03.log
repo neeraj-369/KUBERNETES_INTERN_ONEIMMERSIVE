@@ -1,0 +1,13 @@
+22:19:03.991 HTTP listening on *:90
+22:19:03.991 Matchmaker listening on *:9999
+22:19:07.786 Current status of app-deployment-91z76c1ieuitkiv in tenant-74334f-oidev: 0/1
+22:19:07.787 Deployment not available yet
+22:19:07.794 Current status of pixel-streaming-pod-91z76c1ieuitkiv: Pending
+22:19:08.590 called
+22:19:08.590 0
+22:19:10.605 called
+22:19:10.606 0
+22:19:12.625 called
+22:19:12.625 0
+22:19:14.642 called
+22:19:14.643 0

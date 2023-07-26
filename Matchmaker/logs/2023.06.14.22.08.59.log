@@ -1,0 +1,8 @@
+22:08:59.107 HTTP listening on *:90
+22:08:59.107 Matchmaker listening on *:9999
+22:09:03.439 Current status of pixel-streaming-pod-2nzcbtrjkc25bsd: Pending
+22:09:03.532 Current status of app-deployment-2nzcbtrjkc25bsd in tenant-74334f-oidev: 0/1
+22:09:03.533 not available yet
+22:09:04.202 called
+22:09:05.189 Current status of app-deployment-2nzcbtrjkc25bsd in tenant-74334f-oidev: 0/1
+22:09:05.191 not available yet

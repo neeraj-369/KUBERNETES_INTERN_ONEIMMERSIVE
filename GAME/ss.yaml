@@ -16,11 +16,12 @@ spec:
     spec:
       containers:
       - name: app-containers
-        image: neerajpolavarapu/ss:s
+        image: neerajpolavarapu/ss:ss
         args:  
           - "coturn.tenant-74334f-oidev.lga1.ingress.coreweave.cloud:3478"
           - "PixelStreamingUser"
           - "AnotherTURNintheroad"
+          - ""
         # image: neerajpolavarapu/ss:sss
         ports:
           - containerPort: 8888

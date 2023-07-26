@@ -1,0 +1,111 @@
+12:39:48.633 asdf
+12:39:48.637 HTTP listening on *:90
+12:39:48.637 Matchmaker listening on *:9999
+12:39:55.791 asdf
+12:39:55.793 WARNING: No empty Cirrus servers are available
+12:39:55.794 entered
+12:39:55.797 out
+12:39:55.798 hello
+12:39:56.721 Pod created: V1Pod {
+  apiVersion: 'v1',
+  kind: 'Pod',
+  metadata: V1ObjectMeta {
+    annotations: {
+      'container.apparmor.security.beta.kubernetes.io/pixel-streaming-container': 'runtime/default',
+      'kubernetes.io/psp': 'restricted',
+      'lxcfs-admission-webhook.aliyun.com/status': 'mutated',
+      'seccomp.security.alpha.kubernetes.io/pod': 'docker/default'
+    },
+    creationTimestamp: 2023-07-12T07:09:56.000Z,
+    deletionGracePeriodSeconds: undefined,
+    deletionTimestamp: undefined,
+    finalizers: undefined,
+    generateName: undefined,
+    generation: undefined,
+    labels: { app: 'app1' },
+    managedFields: [ [V1ManagedFieldsEntry] ],
+    name: 'pixel-streaming-pod',
+    namespace: 'tenant-74334f-oidev',
+    ownerReferences: undefined,
+    resourceVersion: '40026318491',
+    selfLink: undefined,
+    uid: '9be1d910-626e-49a9-b0ed-c3910db2370b'
+  },
+  spec: V1PodSpec {
+    activeDeadlineSeconds: undefined,
+    affinity: undefined,
+    automountServiceAccountToken: undefined,
+    containers: [ [V1Container] ],
+    dnsConfig: undefined,
+    dnsPolicy: 'ClusterFirst',
+    enableServiceLinks: true,
+    ephemeralContainers: undefined,
+    hostAliases: undefined,
+    hostIPC: undefined,
+    hostNetwork: undefined,
+    hostPID: undefined,
+    hostUsers: undefined,
+    hostname: undefined,
+    imagePullSecrets: [ [V1LocalObjectReference] ],
+    initContainers: undefined,
+    nodeName: undefined,
+    nodeSelector: { 'node.coreweave.cloud/class': 'gpu' },
+    os: undefined,
+    overhead: undefined,
+    preemptionPolicy: 'PreemptLowerPriority',
+    priority: 1000000,
+    priorityClassName: 'normal',
+    readinessGates: undefined,
+    restartPolicy: 'Always',
+    runtimeClassName: undefined,
+    schedulerName: 'default-scheduler',
+    securityContext: V1PodSecurityContext {
+      fsGroup: undefined,
+      fsGroupChangePolicy: undefined,
+      runAsGroup: undefined,
+      runAsNonRoot: undefined,
+      runAsUser: undefined,
+      seLinuxOptions: undefined,
+      seccompProfile: [V1SeccompProfile],
+      supplementalGroups: undefined,
+      sysctls: undefined,
+      windowsOptions: undefined
+    },
+    serviceAccount: 'default',
+    serviceAccountName: 'default',
+    setHostnameAsFQDN: undefined,
+    shareProcessNamespace: undefined,
+    subdomain: undefined,
+    terminationGracePeriodSeconds: 30,
+    tolerations: [
+      [V1Toleration],
+      [V1Toleration],
+      [V1Toleration],
+      [V1Toleration],
+      [V1Toleration]
+    ],
+    topologySpreadConstraints: undefined,
+    volumes: [
+      [V1Volume], [V1Volume],
+      [V1Volume], [V1Volume],
+      [V1Volume], [V1Volume],
+      [V1Volume], [V1Volume],
+      [V1Volume]
+    ]
+  },
+  status: V1PodStatus {
+    conditions: undefined,
+    containerStatuses: undefined,
+    ephemeralContainerStatuses: undefined,
+    hostIP: undefined,
+    initContainerStatuses: undefined,
+    message: undefined,
+    nominatedNodeName: undefined,
+    phase: 'Pending',
+    podIP: undefined,
+    podIPs: undefined,
+    qosClass: 'Guaranteed',
+    reason: undefined,
+    startTime: undefined
+  }
+}

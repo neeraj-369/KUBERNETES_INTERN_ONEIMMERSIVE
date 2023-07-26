@@ -1,0 +1,27 @@
+12:56:45.366 HTTP listening on *:90
+12:56:45.366 Matchmaker listening on *:9999
+12:56:50.362 
+piVersion: v1
+kind: Pod
+metadata:
+  name: pixel-streaming-pod
+  labels:
+    app: app1
+spec:
+  containers:
+    - name: pixel-streaming-container
+      image: gaddamvinay/repo:finalgame
+      args:  
+        - "-PixelStreamingIp=app-service"
+        - "-PixelStreamingPort=8888"
+      ports:
+        - containerPort: 8888
+          protocol: TCP
+        - containerPort: 8888
+          protocol: UDP
+      # resources:
+      #   limits:
+      #     cpu: "4"
+      #     memory: 1Gi
+      #     nvidia.com/gpu: 4
+

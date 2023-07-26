@@ -1,0 +1,31 @@
+22:42:55.798 HTTP listening on *:90
+22:42:55.798 Matchmaker listening on *:9999
+22:42:59.805 Current status of app-deployment-0k9ra23qi28ol7c in tenant-74334f-oidev: 0/1
+22:42:59.806 Deployment not available yet
+22:43:00.431 Current status of pixel-streaming-pod-0k9ra23qi28ol7c: Pending
+22:43:01.226 Current status of pixel-streaming-pod-0k9ra23qi28ol7c: Pending
+22:43:01.476 Current status of pixel-streaming-pod-0k9ra23qi28ol7c: Pending
+22:43:02.211 Current status of pixel-streaming-pod-0k9ra23qi28ol7c: Pending
+22:43:02.465 Current status of pixel-streaming-pod-0k9ra23qi28ol7c: Pending
+22:43:03.231 Current status of pixel-streaming-pod-0k9ra23qi28ol7c: Pending
+22:43:03.919 Current status of pixel-streaming-pod-0k9ra23qi28ol7c: Pending
+22:43:04.285 Current status of pixel-streaming-pod-0k9ra23qi28ol7c: Pending
+22:43:04.886 Current status of pixel-streaming-pod-0k9ra23qi28ol7c: Pending
+22:43:05.281 Current status of pixel-streaming-pod-0k9ra23qi28ol7c: Pending
+22:43:05.921 Current status of pixel-streaming-pod-0k9ra23qi28ol7c: Running
+22:43:05.921 Pod pixel-streaming-pod-0k9ra23qi28ol7c in tenant-74334f-oidev is now Running
+22:43:06.324 Current status of pixel-streaming-pod-0k9ra23qi28ol7c: Running
+22:43:06.324 Pod pixel-streaming-pod-0k9ra23qi28ol7c in tenant-74334f-oidev is now Running
+22:43:06.828 Current status of app-deployment-0k9ra23qi28ol7c in tenant-74334f-oidev: 1/1
+22:43:06.828 Deployment app-deployment-0k9ra23qi28ol7c in tenant-74334f-oidev is now available
+22:43:06.828 1
+22:43:07.292 Current status of pixel-streaming-pod-0k9ra23qi28ol7c: Running
+22:43:07.292 Pod pixel-streaming-pod-0k9ra23qi28ol7c in tenant-74334f-oidev is now Running
+22:43:07.814 Current status of app-deployment-0k9ra23qi28ol7c in tenant-74334f-oidev: 1/1
+22:43:07.814 Deployment app-deployment-0k9ra23qi28ol7c in tenant-74334f-oidev is now available
+22:43:07.814 1
+22:43:24.291 Current status of pixel-streaming-pod-0k9ra23qi28ol7c: Running
+22:43:24.292 Pod pixel-streaming-pod-0k9ra23qi28ol7c in tenant-74334f-oidev is now Running
+22:43:25.096 Current status of app-deployment-0k9ra23qi28ol7c in tenant-74334f-oidev: 1/1
+22:43:25.097 Deployment app-deployment-0k9ra23qi28ol7c in tenant-74334f-oidev is now available
+22:43:25.097 1

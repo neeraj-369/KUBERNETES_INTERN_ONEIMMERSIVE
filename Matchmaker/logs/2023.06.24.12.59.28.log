@@ -1,0 +1,38 @@
+12:59:28.220 HTTP listening on *:90
+12:59:28.220 Matchmaker listening on *:9999
+12:59:56.146 Current status of app-deployment-ullfqun0arb218m in tenant-74334f-oidev: 0/1
+12:59:56.147 Deployment not available yet
+12:59:56.673 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+12:59:58.019 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+12:59:58.809 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+12:59:58.849 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+13:00:00.171 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+13:00:00.177 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+13:00:01.501 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+13:00:01.506 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+13:00:02.332 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+13:00:02.865 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+13:00:03.565 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+13:00:03.721 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+13:00:04.400 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+13:00:04.555 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+13:00:05.262 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+13:00:05.440 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+13:00:06.117 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+13:00:06.291 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+13:00:06.956 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+13:00:07.201 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+13:00:07.787 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+13:00:08.019 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+13:00:08.631 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+13:00:09.278 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+13:00:09.457 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+13:00:10.281 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+13:00:10.528 Current status of pixel-streaming-pod-ullfqun0arb218m: Pending
+13:00:11.554 Current status of pixel-streaming-pod-ullfqun0arb218m: Running
+13:00:11.555 Pod pixel-streaming-pod-ullfqun0arb218m in tenant-74334f-oidev is now Running
+13:00:11.800 Current status of pixel-streaming-pod-ullfqun0arb218m: Running
+13:00:11.800 Pod pixel-streaming-pod-ullfqun0arb218m in tenant-74334f-oidev is now Running
+13:00:12.126 Current status of app-deployment-ullfqun0arb218m in tenant-74334f-oidev: 1/1
+13:00:12.126 Deployment app-deployment-ullfqun0arb218m in tenant-74334f-oidev is now available
+13:00:12.127 1

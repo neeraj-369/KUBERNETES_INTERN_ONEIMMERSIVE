@@ -1,0 +1,31 @@
+14:39:15.544 HTTP listening on *:90
+14:39:15.544 Matchmaker listening on *:9999
+14:39:19.157 Current status of pixel-streaming-pod-u6hwew36vr9c2iz: Pending
+14:39:19.476 Current status of app-deployment-u6hwew36vr9c2iz in tenant-74334f-oidev: 0/1
+14:39:19.477 Deployment not available yet
+14:39:20.393 Current status of pixel-streaming-pod-u6hwew36vr9c2iz: Pending
+14:39:21.853 Current status of pixel-streaming-pod-u6hwew36vr9c2iz: Pending
+14:39:21.922 Current status of pixel-streaming-pod-u6hwew36vr9c2iz: Pending
+14:39:21.975 this is second tab
+14:39:22.266 this is second tab
+14:39:22.567 this is second tab
+14:39:22.934 this is second tab
+14:39:23.238 Current status of pixel-streaming-pod-u6hwew36vr9c2iz: Pending
+14:39:23.270 Current status of pixel-streaming-pod-u6hwew36vr9c2iz: Pending
+14:39:23.317 this is second tab
+14:39:23.610 this is second tab
+14:39:24.053 this is second tab
+14:39:24.109 Current status of pixel-streaming-pod-u6hwew36vr9c2iz: Pending
+14:39:24.527 Current status of pixel-streaming-pod-u6hwew36vr9c2iz: Pending
+14:39:25.376 Current status of pixel-streaming-pod-u6hwew36vr9c2iz: Pending
+14:39:25.821 Current status of pixel-streaming-pod-u6hwew36vr9c2iz: Pending
+14:39:26.414 this is second tab
+14:39:26.676 Current status of pixel-streaming-pod-u6hwew36vr9c2iz: Pending
+14:39:27.145 Current status of pixel-streaming-pod-u6hwew36vr9c2iz: Pending
+14:39:27.932 Current status of pixel-streaming-pod-u6hwew36vr9c2iz: Running
+14:39:27.932 Pod pixel-streaming-pod-u6hwew36vr9c2iz in tenant-74334f-oidev is now Running
+14:39:28.421 Current status of pixel-streaming-pod-u6hwew36vr9c2iz: Running
+14:39:28.421 Pod pixel-streaming-pod-u6hwew36vr9c2iz in tenant-74334f-oidev is now Running
+14:39:29.234 Current status of app-deployment-u6hwew36vr9c2iz in tenant-74334f-oidev: 0/1
+14:39:29.234 Deployment not available yet
+14:39:29.235 0

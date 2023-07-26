@@ -16,12 +16,11 @@ spec:
     spec:
       containers:
       - name: mm-containers
-        image: neerajpolavarapu/mm:mmm
-        # args:  
-        #   - "coturn.tenant-74334f-oidev.lga1.ingress.coreweave.cloud:3478"
-        #   - "PixelStreamingUser"
-        #   - "AnotherTURNintheroad"
-        # image: neerajpolavarapu/ss:sss
+        image: neerajpolavarapu/mm:mm
+        args:  
+          - "coturn.tenant-74334f-oidev.lga1.ingress.coreweave.cloud:3478"
+          - "PixelStreamingUser"
+          - "AnotherTURNintheroad"
         ports:
           - containerPort: 9999
             protocol: TCP

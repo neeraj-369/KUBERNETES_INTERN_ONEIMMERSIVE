@@ -1,0 +1,14 @@
+19:18:02.757 HTTP listening on *:90
+19:18:02.757 Matchmaker listening on *:9999
+19:18:04.609 WARNING: No empty Cirrus servers are available
+19:18:06.323 Current status of pixel-streaming-pod: Pending
+19:18:07.622 Current status of pixel-streaming-pod: Pending
+19:18:08.856 Current status of pixel-streaming-pod: Pending
+19:18:09.693 Current status of pixel-streaming-pod: Pending
+19:18:10.937 Current status of pixel-streaming-pod: Pending
+19:18:12.174 Current status of pixel-streaming-pod: Pending
+19:18:13.523 Current status of pixel-streaming-pod: Pending
+19:18:14.357 Current status of pixel-streaming-pod: Pending
+19:18:15.673 Current status of pixel-streaming-pod: Pending
+19:18:16.896 Current status of pixel-streaming-pod: Running
+19:18:16.896 Pod pixel-streaming-pod in tenant-74334f-oidev is now Running

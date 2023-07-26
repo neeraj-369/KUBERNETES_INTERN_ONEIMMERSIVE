@@ -1,0 +1,10 @@
+22:31:22.387 HTTP listening on *:90
+22:31:22.388 Matchmaker listening on *:9999
+22:31:26.375 Current status of app-deployment-f5l8q10unjjzij7 in tenant-74334f-oidev: 0/1
+22:31:26.375 Deployment not available yet
+22:31:27.757 Current status of app-deployment-f5l8q10unjjzij7 in tenant-74334f-oidev: 0/1
+22:31:27.757 Deployment not available yet
+22:31:27.758 0
+22:31:30.693 Current status of app-deployment-f5l8q10unjjzij7 in tenant-74334f-oidev: 1/1
+22:31:30.693 Deployment app-deployment-f5l8q10unjjzij7 in tenant-74334f-oidev is now available
+22:31:30.693 1

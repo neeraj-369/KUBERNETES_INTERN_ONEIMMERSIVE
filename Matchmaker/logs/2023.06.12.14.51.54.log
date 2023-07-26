@@ -1,0 +1,67 @@
+14:51:54.353 asdf
+14:51:54.355 HTTP listening on *:90
+14:51:54.356 Matchmaker listening on *:9999
+14:51:55.333 asdf
+14:51:55.335 WARNING: No empty Cirrus servers are available
+14:51:55.335 entered
+14:51:55.337 hello
+14:51:56.169 Pod status: V1PodStatus {
+  conditions: [
+    V1PodCondition {
+      lastProbeTime: null,
+      lastTransitionTime: 2023-07-12T09:21:06.000Z,
+      message: undefined,
+      reason: undefined,
+      status: 'True',
+      type: 'Initialized'
+    },
+    V1PodCondition {
+      lastProbeTime: null,
+      lastTransitionTime: 2023-07-12T09:21:25.000Z,
+      message: undefined,
+      reason: undefined,
+      status: 'True',
+      type: 'Ready'
+    },
+    V1PodCondition {
+      lastProbeTime: null,
+      lastTransitionTime: 2023-07-12T09:21:25.000Z,
+      message: undefined,
+      reason: undefined,
+      status: 'True',
+      type: 'ContainersReady'
+    },
+    V1PodCondition {
+      lastProbeTime: null,
+      lastTransitionTime: 2023-07-12T09:21:05.000Z,
+      message: undefined,
+      reason: undefined,
+      status: 'True',
+      type: 'PodScheduled'
+    }
+  ],
+  containerStatuses: [
+    V1ContainerStatus {
+      containerID: 'containerd://562b36cd332c72c723dbbb28b32948afab67c9a2fe67d1529b7ea827cf7b2a37',
+      image: 'docker.io/gaddamvinay/repo:finalgame',
+      imageID: 'docker.io/gaddamvinay/repo@sha256:1410e5c93ea0aa92583238ece3b449ed139e5e5eff96b25f43e73e3c68ff899e',
+      lastState: [V1ContainerState],
+      name: 'pixel-streaming-container',
+      ready: true,
+      restartCount: 0,
+      started: true,
+      state: [V1ContainerState]
+    }
+  ],
+  ephemeralContainerStatuses: undefined,
+  hostIP: '10.131.26.12',
+  initContainerStatuses: undefined,
+  message: undefined,
+  nominatedNodeName: undefined,
+  phase: 'Running',
+  podIP: '10.147.149.165',
+  podIPs: [ V1PodIP { ip: '10.147.149.165' } ],
+  qosClass: 'Guaranteed',
+  reason: undefined,
+  startTime: 2023-07-12T09:21:06.000Z
+}

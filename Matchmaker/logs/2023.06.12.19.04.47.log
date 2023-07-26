@@ -1,0 +1,23 @@
+19:04:47.020 HTTP listening on *:90
+19:04:47.020 Matchmaker listening on *:9999
+19:04:50.440 WARNING: No empty Cirrus servers are available
+19:04:51.522 redicting......
+19:04:51.526 Error creating resources: TypeError: Cannot read properties of undefined (reading 'redirect')
+    at createResourcesAndRedirect (/Users/neeraj/Desktop/kubernetes/Matchmaker/matchmaker.js:636:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+19:04:52.375 Current status of pixel-streaming-pod: Pending
+19:04:52.628 Current status of app-deployment in tenant-74334f-oidev: 0/1
+19:04:53.803 Current status of pixel-streaming-pod: Pending
+19:04:53.943 Current status of app-deployment in tenant-74334f-oidev: 0/1
+19:04:54.754 Current status of app-deployment in tenant-74334f-oidev: 0/1
+19:04:55.072 Current status of pixel-streaming-pod: Pending
+19:04:56.055 Current status of app-deployment in tenant-74334f-oidev: 1/1
+19:04:56.055 Deployment app-deployment in tenant-74334f-oidev is now available
+19:04:56.377 Current status of pixel-streaming-pod: Pending
+19:04:57.789 Current status of pixel-streaming-pod: Pending
+19:04:59.126 Current status of pixel-streaming-pod: Pending
+19:05:00.453 Current status of pixel-streaming-pod: Pending
+19:05:01.392 Current status of pixel-streaming-pod: Pending
+19:05:02.809 Current status of pixel-streaming-pod: Pending
+19:05:03.698 Current status of pixel-streaming-pod: Running
+19:05:03.699 Pod pixel-streaming-pod in tenant-74334f-oidev is now Running

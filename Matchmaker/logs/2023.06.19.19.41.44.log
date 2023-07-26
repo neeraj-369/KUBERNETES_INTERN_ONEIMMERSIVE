@@ -1,0 +1,10 @@
+19:41:44.844 HTTP listening on *:90
+19:41:44.844 Matchmaker listening on *:9999
+19:41:48.853 Current status of pixel-streaming-pod-16sfiw5496supqv: Pending
+19:41:48.863 Current status of app-deployment-16sfiw5496supqv in tenant-74334f-oidev: 0/1
+19:41:48.863 Deployment not available yet
+19:41:50.092 Current status of pixel-streaming-pod-16sfiw5496supqv: Pending
+19:41:51.440 Current status of pixel-streaming-pod-16sfiw5496supqv: Pending
+19:41:52.832 Current status of pixel-streaming-pod-16sfiw5496supqv: Pending
+19:41:54.168 Current status of pixel-streaming-pod-16sfiw5496supqv: Running
+19:41:54.168 Pod pixel-streaming-pod-16sfiw5496supqv in tenant-74334f-oidev is now Running

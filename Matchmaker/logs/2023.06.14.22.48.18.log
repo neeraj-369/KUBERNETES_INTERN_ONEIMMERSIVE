@@ -1,0 +1,5 @@
+22:48:18.712 HTTP listening on *:90
+22:48:18.712 Matchmaker listening on *:9999
+22:48:34.793 Current status of pixel-streaming-pod-zyye9fyn939r44c: Pending
+22:48:34.809 Current status of app-deployment-zyye9fyn939r44c in tenant-74334f-oidev: 0/1
+22:48:34.810 Deployment not available yet

@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kaniko
+spec:
+  containers:
+  - name: kaniko
+    image: gcr.io/kaniko-project/executor:latest
+    args: ["--dockerfile=Dockerfile",
+            "--context=git://github.com/arunksingh16/kaniko.git#refs/heads/master",
+            "--destination=gaddamvinay/repo:kaniko"]
+    volumeMounts:
+    - name: docker-registry-secret
+      mountPath: "/kaniko/.docker"
+  volumes:
+  - name: docker-registry-secret
+    secret:
+      secretName: dockerhub-gaddam
+

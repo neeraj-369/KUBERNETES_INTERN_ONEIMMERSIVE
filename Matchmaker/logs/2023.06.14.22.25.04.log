@@ -1,0 +1,31 @@
+22:25:04.483 HTTP listening on *:90
+22:25:04.483 Matchmaker listening on *:9999
+22:25:07.678 Current status of app-deployment-81vawzfe5tnslj8 in tenant-74334f-oidev: 0/1
+22:25:07.679 Deployment not available yet
+22:25:08.877 0
+22:25:09.390 Current status of app-deployment-81vawzfe5tnslj8 in tenant-74334f-oidev: 0/1
+22:25:09.391 Deployment not available yet
+22:25:10.887 0
+22:25:11.352 Current status of app-deployment-81vawzfe5tnslj8 in tenant-74334f-oidev: 0/1
+22:25:11.354 Deployment not available yet
+22:25:12.914 0
+22:25:13.883 Current status of app-deployment-81vawzfe5tnslj8 in tenant-74334f-oidev: 1/1
+22:25:13.883 Deployment app-deployment-81vawzfe5tnslj8 in tenant-74334f-oidev is now available
+22:25:14.937 0
+22:25:15.410 Current status of app-deployment-81vawzfe5tnslj8 in tenant-74334f-oidev: 1/1
+22:25:15.410 Deployment app-deployment-81vawzfe5tnslj8 in tenant-74334f-oidev is now available
+22:25:16.952 0
+22:25:17.862 Current status of app-deployment-81vawzfe5tnslj8 in tenant-74334f-oidev: 1/1
+22:25:17.862 Deployment app-deployment-81vawzfe5tnslj8 in tenant-74334f-oidev is now available
+22:25:18.969 0
+22:25:19.422 Current status of app-deployment-81vawzfe5tnslj8 in tenant-74334f-oidev: 1/1
+22:25:19.422 Deployment app-deployment-81vawzfe5tnslj8 in tenant-74334f-oidev is now available
+22:25:20.984 0
+22:25:21.527 Current status of app-deployment-81vawzfe5tnslj8 in tenant-74334f-oidev: 1/1
+22:25:21.528 Deployment app-deployment-81vawzfe5tnslj8 in tenant-74334f-oidev is now available
+22:25:22.997 0
+22:25:23.463 Current status of app-deployment-81vawzfe5tnslj8 in tenant-74334f-oidev: 1/1
+22:25:23.463 Deployment app-deployment-81vawzfe5tnslj8 in tenant-74334f-oidev is now available
+22:25:25.010 0
+22:25:25.952 Current status of app-deployment-81vawzfe5tnslj8 in tenant-74334f-oidev: 1/1
+22:25:25.953 Deployment app-deployment-81vawzfe5tnslj8 in tenant-74334f-oidev is now available

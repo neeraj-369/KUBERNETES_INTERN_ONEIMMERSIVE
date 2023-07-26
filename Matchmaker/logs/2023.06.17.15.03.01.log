@@ -1,0 +1,23 @@
+15:03:01.906 HTTP listening on *:90
+15:03:01.907 Matchmaker listening on *:9999
+15:03:07.380 Current status of pixel-streaming-pod-wiz6b6btb6pmobg: Pending
+15:03:07.449 Current status of app-deployment-wiz6b6btb6pmobg in tenant-74334f-oidev: 0/1
+15:03:07.450 Deployment not available yet
+15:03:08.207 Current status of pixel-streaming-pod-wiz6b6btb6pmobg: Pending
+15:03:09.529 Current status of pixel-streaming-pod-wiz6b6btb6pmobg: Pending
+15:03:09.535 Current status of pixel-streaming-pod-wiz6b6btb6pmobg: Pending
+15:03:10.795 Current status of pixel-streaming-pod-wiz6b6btb6pmobg: Pending
+15:03:10.949 Current status of pixel-streaming-pod-wiz6b6btb6pmobg: Pending
+15:03:11.638 Current status of pixel-streaming-pod-wiz6b6btb6pmobg: Running
+15:03:11.638 Pod pixel-streaming-pod-wiz6b6btb6pmobg in tenant-74334f-oidev is now Running
+15:03:12.264 Current status of pixel-streaming-pod-wiz6b6btb6pmobg: Running
+15:03:12.265 Pod pixel-streaming-pod-wiz6b6btb6pmobg in tenant-74334f-oidev is now Running
+15:03:12.416 Current status of app-deployment-wiz6b6btb6pmobg in tenant-74334f-oidev: 1/1
+15:03:12.417 Deployment app-deployment-wiz6b6btb6pmobg in tenant-74334f-oidev is now available
+15:03:12.417 1
+15:05:06.752 this is second tab
+15:05:10.765 Current status of pixel-streaming-pod-wiz6b6btb6pmobg: Running
+15:05:10.765 Pod pixel-streaming-pod-wiz6b6btb6pmobg in tenant-74334f-oidev is now Running
+15:05:11.590 Current status of app-deployment-wiz6b6btb6pmobg in tenant-74334f-oidev: 1/1
+15:05:11.590 Deployment app-deployment-wiz6b6btb6pmobg in tenant-74334f-oidev is now available
+15:05:11.590 1

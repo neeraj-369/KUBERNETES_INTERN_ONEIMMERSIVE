@@ -1,0 +1,91 @@
+22:00:18.880 HTTP listening on *:90
+22:00:18.880 Matchmaker listening on *:9999
+22:00:21.284 Current status of app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev: 0/1
+22:00:21.675 Current status of pixel-streaming-pod-8xaltnhsnqx834l: Pending
+22:00:23.229 called
+22:00:23.230 0
+22:00:23.691 Current status of pixel-streaming-pod-8xaltnhsnqx834l: Pending
+22:00:23.701 Current status of app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev: 0/1
+22:00:25.243 called
+22:00:25.244 0
+22:00:25.741 Current status of pixel-streaming-pod-8xaltnhsnqx834l: Running
+22:00:25.742 Pod pixel-streaming-pod-8xaltnhsnqx834l in tenant-74334f-oidev is now Running
+22:00:26.271 Current status of app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev: 0/1
+22:00:27.276 called
+22:00:27.277 0
+22:00:28.242 Current status of app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev: 0/1
+22:00:28.322 Current status of pixel-streaming-pod-8xaltnhsnqx834l: Running
+22:00:28.322 Pod pixel-streaming-pod-8xaltnhsnqx834l in tenant-74334f-oidev is now Running
+22:00:29.290 called
+22:00:29.292 0
+22:00:29.915 Current status of app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev: 0/1
+22:00:29.918 Current status of pixel-streaming-pod-8xaltnhsnqx834l: Running
+22:00:29.918 Pod pixel-streaming-pod-8xaltnhsnqx834l in tenant-74334f-oidev is now Running
+22:00:31.303 called
+22:00:31.303 0
+22:00:31.853 Current status of app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev: 1/1
+22:00:31.853 Deployment app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev is now available
+22:00:32.258 Current status of pixel-streaming-pod-8xaltnhsnqx834l: Running
+22:00:32.259 Pod pixel-streaming-pod-8xaltnhsnqx834l in tenant-74334f-oidev is now Running
+22:00:33.316 called
+22:00:33.316 0
+22:00:33.796 Current status of pixel-streaming-pod-8xaltnhsnqx834l: Running
+22:00:33.796 Pod pixel-streaming-pod-8xaltnhsnqx834l in tenant-74334f-oidev is now Running
+22:00:33.846 Current status of app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev: 1/1
+22:00:33.847 Deployment app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev is now available
+22:00:35.327 called
+22:00:35.328 0
+22:00:35.852 Current status of pixel-streaming-pod-8xaltnhsnqx834l: Running
+22:00:35.852 Pod pixel-streaming-pod-8xaltnhsnqx834l in tenant-74334f-oidev is now Running
+22:00:35.926 Current status of app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev: 1/1
+22:00:35.926 Deployment app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev is now available
+22:00:37.337 called
+22:00:37.338 0
+22:00:37.892 Current status of pixel-streaming-pod-8xaltnhsnqx834l: Running
+22:00:37.892 Pod pixel-streaming-pod-8xaltnhsnqx834l in tenant-74334f-oidev is now Running
+22:00:37.896 Current status of app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev: 1/1
+22:00:37.896 Deployment app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev is now available
+22:00:39.347 called
+22:00:39.347 0
+22:00:40.273 Current status of app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev: 1/1
+22:00:40.273 Deployment app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev is now available
+22:00:40.358 Current status of pixel-streaming-pod-8xaltnhsnqx834l: Running
+22:00:40.358 Pod pixel-streaming-pod-8xaltnhsnqx834l in tenant-74334f-oidev is now Running
+22:00:41.358 called
+22:00:41.358 0
+22:00:41.853 Current status of app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev: 1/1
+22:00:41.853 Deployment app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev is now available
+22:00:41.856 Current status of pixel-streaming-pod-8xaltnhsnqx834l: Running
+22:00:41.856 Pod pixel-streaming-pod-8xaltnhsnqx834l in tenant-74334f-oidev is now Running
+22:00:43.369 called
+22:00:43.370 0
+22:00:43.898 Current status of pixel-streaming-pod-8xaltnhsnqx834l: Running
+22:00:43.898 Pod pixel-streaming-pod-8xaltnhsnqx834l in tenant-74334f-oidev is now Running
+22:00:43.900 Current status of app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev: 1/1
+22:00:43.900 Deployment app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev is now available
+22:00:45.380 called
+22:00:45.382 0
+22:00:45.994 Current status of pixel-streaming-pod-8xaltnhsnqx834l: Running
+22:00:45.994 Pod pixel-streaming-pod-8xaltnhsnqx834l in tenant-74334f-oidev is now Running
+22:00:46.314 Current status of app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev: 1/1
+22:00:46.314 Deployment app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev is now available
+22:00:47.389 called
+22:00:47.389 0
+22:00:47.833 Current status of app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev: 1/1
+22:00:47.833 Deployment app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev is now available
+22:00:47.868 Current status of pixel-streaming-pod-8xaltnhsnqx834l: Running
+22:00:47.869 Pod pixel-streaming-pod-8xaltnhsnqx834l in tenant-74334f-oidev is now Running
+22:00:49.402 called
+22:00:49.402 0
+22:00:49.928 Current status of app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev: 1/1
+22:00:49.928 Deployment app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev is now available
+22:00:49.993 Current status of pixel-streaming-pod-8xaltnhsnqx834l: Running
+22:00:49.993 Pod pixel-streaming-pod-8xaltnhsnqx834l in tenant-74334f-oidev is now Running
+22:00:51.414 called
+22:00:51.415 0
+22:00:51.933 Current status of app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev: 1/1
+22:00:51.933 Deployment app-deployment-8xaltnhsnqx834l in tenant-74334f-oidev is now available
+22:00:51.997 Current status of pixel-streaming-pod-8xaltnhsnqx834l: Running
+22:00:51.997 Pod pixel-streaming-pod-8xaltnhsnqx834l in tenant-74334f-oidev is now Running
+22:00:53.425 called
+22:00:53.426 0

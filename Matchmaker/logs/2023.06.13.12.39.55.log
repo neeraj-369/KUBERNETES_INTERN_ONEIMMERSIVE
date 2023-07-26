@@ -1,0 +1,15 @@
+12:39:55.889 HTTP listening on *:90
+12:39:55.889 Matchmaker listening on *:9999
+12:40:03.322 Current status of pixel-streaming-pod: Pending
+12:40:03.332 Current status of app-deployment in tenant-74334f-oidev: 0/1
+12:40:04.616 Current status of pixel-streaming-pod: Pending
+12:40:04.644 Current status of app-deployment in tenant-74334f-oidev: 0/1
+12:40:06.084 Current status of pixel-streaming-pod: Pending
+12:40:06.093 Current status of app-deployment in tenant-74334f-oidev: 0/1
+12:40:06.936 Current status of pixel-streaming-pod: Pending
+12:40:07.378 Current status of app-deployment in tenant-74334f-oidev: 0/1
+12:40:07.773 Current status of pixel-streaming-pod: Running
+12:40:07.773 Pod pixel-streaming-pod in tenant-74334f-oidev is now Running
+12:40:08.643 Current status of app-deployment in tenant-74334f-oidev: 0/1
+12:40:09.566 Current status of app-deployment in tenant-74334f-oidev: 1/1
+12:40:09.566 Deployment app-deployment in tenant-74334f-oidev is now available

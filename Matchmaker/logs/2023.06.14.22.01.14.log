@@ -1,0 +1,60 @@
+22:01:14.468 HTTP listening on *:90
+22:01:14.468 Matchmaker listening on *:9999
+22:01:16.738 Current status of app-deployment-lhejsrpm2n01ngk in tenant-74334f-oidev: 0/1
+22:01:16.779 Current status of pixel-streaming-pod-lhejsrpm2n01ngk: Pending
+22:01:18.558 called
+22:01:18.560 undefined
+22:01:19.001 Current status of app-deployment-lhejsrpm2n01ngk in tenant-74334f-oidev: 0/1
+22:01:19.012 Current status of pixel-streaming-pod-lhejsrpm2n01ngk: Pending
+22:01:20.574 called
+22:01:20.575 undefined
+22:01:21.076 Current status of pixel-streaming-pod-lhejsrpm2n01ngk: Pending
+22:01:21.112 Current status of app-deployment-lhejsrpm2n01ngk in tenant-74334f-oidev: 1/1
+22:01:21.112 Deployment app-deployment-lhejsrpm2n01ngk in tenant-74334f-oidev is now available
+22:01:22.602 called
+22:01:22.603 undefined
+22:01:23.073 Current status of pixel-streaming-pod-lhejsrpm2n01ngk: Pending
+22:01:23.095 Current status of app-deployment-lhejsrpm2n01ngk in tenant-74334f-oidev: 1/1
+22:01:23.096 Deployment app-deployment-lhejsrpm2n01ngk in tenant-74334f-oidev is now available
+22:01:24.625 called
+22:01:24.627 undefined
+22:01:25.097 Current status of pixel-streaming-pod-lhejsrpm2n01ngk: Pending
+22:01:25.118 Current status of app-deployment-lhejsrpm2n01ngk in tenant-74334f-oidev: 1/1
+22:01:25.119 Deployment app-deployment-lhejsrpm2n01ngk in tenant-74334f-oidev is now available
+22:01:26.643 called
+22:01:26.644 undefined
+22:01:27.112 Current status of app-deployment-lhejsrpm2n01ngk in tenant-74334f-oidev: 1/1
+22:01:27.113 Deployment app-deployment-lhejsrpm2n01ngk in tenant-74334f-oidev is now available
+22:01:27.137 Current status of pixel-streaming-pod-lhejsrpm2n01ngk: Pending
+22:01:28.654 called
+22:01:28.654 undefined
+22:01:29.113 Current status of app-deployment-lhejsrpm2n01ngk in tenant-74334f-oidev: 1/1
+22:01:29.114 Deployment app-deployment-lhejsrpm2n01ngk in tenant-74334f-oidev is now available
+22:01:29.600 Current status of pixel-streaming-pod-lhejsrpm2n01ngk: Pending
+22:01:30.667 called
+22:01:30.670 undefined
+22:01:31.174 Current status of app-deployment-lhejsrpm2n01ngk in tenant-74334f-oidev: 1/1
+22:01:31.174 Deployment app-deployment-lhejsrpm2n01ngk in tenant-74334f-oidev is now available
+22:01:31.176 Current status of pixel-streaming-pod-lhejsrpm2n01ngk: Pending
+22:01:32.679 called
+22:01:32.679 undefined
+22:01:33.193 Current status of app-deployment-lhejsrpm2n01ngk in tenant-74334f-oidev: 1/1
+22:01:33.193 Deployment app-deployment-lhejsrpm2n01ngk in tenant-74334f-oidev is now available
+22:01:33.229 Current status of pixel-streaming-pod-lhejsrpm2n01ngk: Running
+22:01:33.229 Pod pixel-streaming-pod-lhejsrpm2n01ngk in tenant-74334f-oidev is now Running
+22:01:34.692 called
+22:01:34.693 undefined
+22:01:35.556 Current status of app-deployment-lhejsrpm2n01ngk in tenant-74334f-oidev: 1/1
+22:01:35.556 Deployment app-deployment-lhejsrpm2n01ngk in tenant-74334f-oidev is now available
+22:01:35.559 Current status of pixel-streaming-pod-lhejsrpm2n01ngk: Running
+22:01:35.559 Pod pixel-streaming-pod-lhejsrpm2n01ngk in tenant-74334f-oidev is now Running
+22:01:36.712 called
+22:01:36.713 undefined
+22:01:37.350 Current status of pixel-streaming-pod-lhejsrpm2n01ngk: Running
+22:01:37.350 Pod pixel-streaming-pod-lhejsrpm2n01ngk in tenant-74334f-oidev is now Running
+22:01:37.540 Current status of app-deployment-lhejsrpm2n01ngk in tenant-74334f-oidev: 1/1
+22:01:37.540 Deployment app-deployment-lhejsrpm2n01ngk in tenant-74334f-oidev is now available
+22:01:38.722 called
+22:01:38.722 undefined
+22:01:39.200 Current status of app-deployment-lhejsrpm2n01ngk in tenant-74334f-oidev: 1/1
+22:01:39.200 Deployment app-deployment-lhejsrpm2n01ngk in tenant-74334f-oidev is now available

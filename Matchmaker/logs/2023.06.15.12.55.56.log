@@ -1,0 +1,38 @@
+12:55:56.217 HTTP listening on *:90
+12:55:56.217 Matchmaker listening on *:9999
+12:56:03.711 Current status of app-deployment-z5975wqbhemtpqm in tenant-74334f-oidev: 0/1
+12:56:03.712 Deployment not available yet
+12:56:03.905 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:05.213 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:06.113 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:06.569 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:07.430 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:07.959 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:08.377 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:09.274 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:09.308 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:10.234 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:10.629 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:11.114 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:11.913 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:12.439 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:13.175 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:13.304 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:14.131 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:14.609 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:15.414 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:16.025 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:16.467 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:16.938 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:17.385 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:18.258 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:18.727 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:19.520 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Pending
+12:56:20.045 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Running
+12:56:20.045 Pod pixel-streaming-pod-z5975wqbhemtpqm in tenant-74334f-oidev is now Running
+12:56:20.342 Current status of app-deployment-z5975wqbhemtpqm in tenant-74334f-oidev: 1/1
+12:56:20.342 Deployment app-deployment-z5975wqbhemtpqm in tenant-74334f-oidev is now available
+12:56:20.342 1
+12:56:20.969 Current status of pixel-streaming-pod-z5975wqbhemtpqm: Running
+12:56:20.969 Pod pixel-streaming-pod-z5975wqbhemtpqm in tenant-74334f-oidev is now Running
+14:13:20.877 this is second tab

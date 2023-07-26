@@ -1,0 +1,41 @@
+22:17:17.741 HTTP listening on *:90
+22:17:17.741 Matchmaker listening on *:9999
+22:17:23.046 Current status of pixel-streaming-pod-lbx02gnpatl16dw: Pending
+22:17:23.381 Current status of app-deployment-lbx02gnpatl16dw in tenant-74334f-oidev: 0/1
+22:17:23.381 not available yet
+22:17:23.445 called
+22:17:23.446 0
+22:17:23.956 Current status of app-deployment-lbx02gnpatl16dw in tenant-74334f-oidev: 0/1
+22:17:23.956 not available yet
+22:17:25.460 called
+22:17:25.461 0
+22:17:26.218 Current status of app-deployment-lbx02gnpatl16dw in tenant-74334f-oidev: 0/1
+22:17:26.218 not available yet
+22:17:27.482 called
+22:17:27.483 0
+22:17:28.565 Current status of app-deployment-lbx02gnpatl16dw in tenant-74334f-oidev: 0/1
+22:17:28.565 not available yet
+22:17:29.498 called
+22:17:29.499 0
+22:17:29.940 Current status of app-deployment-lbx02gnpatl16dw in tenant-74334f-oidev: 1/1
+22:17:29.941 Deployment app-deployment-lbx02gnpatl16dw in tenant-74334f-oidev is now available
+22:17:31.513 called
+22:17:31.513 0
+22:17:32.095 Current status of app-deployment-lbx02gnpatl16dw in tenant-74334f-oidev: 1/1
+22:17:32.096 Deployment app-deployment-lbx02gnpatl16dw in tenant-74334f-oidev is now available
+22:17:33.527 called
+22:17:33.528 0
+22:17:34.013 Current status of app-deployment-lbx02gnpatl16dw in tenant-74334f-oidev: 1/1
+22:17:34.013 Deployment app-deployment-lbx02gnpatl16dw in tenant-74334f-oidev is now available
+22:17:35.539 called
+22:17:35.540 0
+22:17:36.037 Current status of app-deployment-lbx02gnpatl16dw in tenant-74334f-oidev: 1/1
+22:17:36.037 Deployment app-deployment-lbx02gnpatl16dw in tenant-74334f-oidev is now available
+22:17:37.551 called
+22:17:37.552 0
+22:17:38.056 Current status of app-deployment-lbx02gnpatl16dw in tenant-74334f-oidev: 1/1
+22:17:38.056 Deployment app-deployment-lbx02gnpatl16dw in tenant-74334f-oidev is now available
+22:17:39.564 called
+22:17:39.565 0
+22:17:40.497 Current status of app-deployment-lbx02gnpatl16dw in tenant-74334f-oidev: 1/1
+22:17:40.497 Deployment app-deployment-lbx02gnpatl16dw in tenant-74334f-oidev is now available

@@ -1,0 +1,4 @@
+21:35:48.636 HTTP listening on *:90
+21:35:48.636 Matchmaker listening on *:9999
+21:35:59.832 Current status of app-deployment-40p4hjbq27ggwtb in tenant-74334f-oidev: 0/1
+21:35:59.841 Current status of pixel-streaming-pod-40p4hjbq27ggwtb: Pending

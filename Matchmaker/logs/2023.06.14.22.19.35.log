@@ -1,0 +1,90 @@
+22:19:35.982 HTTP listening on *:90
+22:19:35.982 Matchmaker listening on *:9999
+22:19:38.068 Current status of pixel-streaming-pod-rt1q8di3tc81zid: Pending
+22:19:38.716 Current status of app-deployment-rt1q8di3tc81zid in tenant-74334f-oidev: 0/1
+22:19:38.716 Deployment not available yet
+22:19:40.097 called
+22:19:40.097 0
+22:19:40.650 Current status of app-deployment-rt1q8di3tc81zid in tenant-74334f-oidev: 0/1
+22:19:40.650 Deployment not available yet
+22:19:40.653 Deployment status: 0
+22:19:42.116 called
+22:19:42.116 0
+22:19:42.612 Current status of app-deployment-rt1q8di3tc81zid in tenant-74334f-oidev: 0/1
+22:19:42.612 Deployment not available yet
+22:19:42.612 Deployment status: 0
+22:19:44.138 called
+22:19:44.139 0
+22:19:44.616 Current status of app-deployment-rt1q8di3tc81zid in tenant-74334f-oidev: 0/1
+22:19:44.616 Deployment not available yet
+22:19:44.616 Deployment status: 0
+22:19:46.158 called
+22:19:46.158 0
+22:19:46.739 Current status of app-deployment-rt1q8di3tc81zid in tenant-74334f-oidev: 0/1
+22:19:46.739 Deployment not available yet
+22:19:46.740 Deployment status: 0
+22:19:48.174 called
+22:19:48.174 0
+22:19:48.613 Current status of app-deployment-rt1q8di3tc81zid in tenant-74334f-oidev: 0/1
+22:19:48.613 Deployment not available yet
+22:19:48.614 Deployment status: 0
+22:19:50.186 called
+22:19:50.187 0
+22:19:51.233 Current status of app-deployment-rt1q8di3tc81zid in tenant-74334f-oidev: 0/1
+22:19:51.233 Deployment not available yet
+22:19:51.234 Deployment status: 0
+22:19:52.202 called
+22:19:52.202 0
+22:19:52.931 Current status of app-deployment-rt1q8di3tc81zid in tenant-74334f-oidev: 0/1
+22:19:52.932 Deployment not available yet
+22:19:52.932 Deployment status: 0
+22:19:54.215 called
+22:19:54.216 0
+22:19:55.294 Current status of app-deployment-rt1q8di3tc81zid in tenant-74334f-oidev: 0/1
+22:19:55.294 Deployment not available yet
+22:19:55.294 Deployment status: 0
+22:19:56.228 called
+22:19:56.229 0
+22:19:56.829 Current status of app-deployment-rt1q8di3tc81zid in tenant-74334f-oidev: 0/1
+22:19:56.830 Deployment not available yet
+22:19:56.830 Deployment status: 0
+22:19:58.243 called
+22:19:58.244 0
+22:19:58.693 Current status of app-deployment-rt1q8di3tc81zid in tenant-74334f-oidev: 0/1
+22:19:58.693 Deployment not available yet
+22:19:58.694 Deployment status: 0
+22:20:00.256 called
+22:20:00.257 0
+22:20:00.776 Current status of app-deployment-rt1q8di3tc81zid in tenant-74334f-oidev: 0/1
+22:20:00.776 Deployment not available yet
+22:20:00.777 Deployment status: 0
+22:20:02.271 called
+22:20:02.272 0
+22:20:02.718 Current status of app-deployment-rt1q8di3tc81zid in tenant-74334f-oidev: 0/1
+22:20:02.718 Deployment not available yet
+22:20:02.718 Deployment status: 0
+22:20:04.284 called
+22:20:04.284 0
+22:20:04.782 Current status of app-deployment-rt1q8di3tc81zid in tenant-74334f-oidev: 0/1
+22:20:04.783 Deployment not available yet
+22:20:04.783 Deployment status: 0
+22:20:06.299 called
+22:20:06.300 0
+22:20:06.804 Current status of app-deployment-rt1q8di3tc81zid in tenant-74334f-oidev: 0/1
+22:20:06.804 Deployment not available yet
+22:20:06.805 Deployment status: 0
+22:20:08.312 called
+22:20:08.313 0
+22:20:08.868 Current status of app-deployment-rt1q8di3tc81zid in tenant-74334f-oidev: 1/1
+22:20:08.868 Deployment app-deployment-rt1q8di3tc81zid in tenant-74334f-oidev is now available
+22:20:08.868 Deployment status: 1
+22:20:10.326 called
+22:20:10.326 0
+22:20:10.961 Current status of app-deployment-rt1q8di3tc81zid in tenant-74334f-oidev: 1/1
+22:20:10.961 Deployment app-deployment-rt1q8di3tc81zid in tenant-74334f-oidev is now available
+22:20:10.961 Deployment status: 1
+22:20:12.338 called
+22:20:12.339 0
+22:20:12.909 Current status of app-deployment-rt1q8di3tc81zid in tenant-74334f-oidev: 1/1
+22:20:12.909 Deployment app-deployment-rt1q8di3tc81zid in tenant-74334f-oidev is now available
+22:20:12.909 Deployment status: 1

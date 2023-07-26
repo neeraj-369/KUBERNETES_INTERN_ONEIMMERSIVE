@@ -1,0 +1,9 @@
+15:32:01.643 HTTP listening on *:90
+15:32:01.643 Matchmaker listening on *:9999
+15:32:04.870 Current status of pixel-streaming-pod-zvloskke9h7h6nl: Pending
+15:32:06.127 Current status of pixel-streaming-pod-zvloskke9h7h6nl: Pending
+15:32:07.348 Current status of pixel-streaming-pod-zvloskke9h7h6nl: Pending
+15:32:08.638 Current status of pixel-streaming-pod-zvloskke9h7h6nl: Pending
+15:32:09.880 Current status of pixel-streaming-pod-zvloskke9h7h6nl: Pending
+15:32:11.137 Current status of pixel-streaming-pod-zvloskke9h7h6nl: Running
+15:32:11.137 Pod pixel-streaming-pod-zvloskke9h7h6nl in tenant-74334f-oidev is now Running

@@ -1,0 +1,30 @@
+16:37:14.552 HTTP listening on *:90
+16:37:14.552 Matchmaker listening on *:9999
+16:37:20.056 Current status of app-deployment-njfjnxvdz8erpnz in tenant-74334f-oidev: 0/1
+16:37:20.062 Current status of pixel-streaming-pod-njfjnxvdz8erpnz: Pending
+16:37:21.285 Current status of app-deployment-njfjnxvdz8erpnz in tenant-74334f-oidev: 0/1
+16:37:21.299 Current status of pixel-streaming-pod-njfjnxvdz8erpnz: Pending
+16:37:22.128 Current status of pixel-streaming-pod-njfjnxvdz8erpnz: Pending
+16:37:22.622 Current status of app-deployment-njfjnxvdz8erpnz in tenant-74334f-oidev: 0/1
+16:37:23.382 Current status of pixel-streaming-pod-njfjnxvdz8erpnz: Running
+16:37:23.382 Pod pixel-streaming-pod-njfjnxvdz8erpnz in tenant-74334f-oidev is now Running
+16:37:23.443 Current status of app-deployment-njfjnxvdz8erpnz in tenant-74334f-oidev: 0/1
+16:37:24.767 Current status of app-deployment-njfjnxvdz8erpnz in tenant-74334f-oidev: 0/1
+16:37:26.096 Current status of app-deployment-njfjnxvdz8erpnz in tenant-74334f-oidev: 0/1
+16:37:27.341 Current status of app-deployment-njfjnxvdz8erpnz in tenant-74334f-oidev: 0/1
+16:37:28.590 Current status of app-deployment-njfjnxvdz8erpnz in tenant-74334f-oidev: 0/1
+16:37:29.477 Current status of app-deployment-njfjnxvdz8erpnz in tenant-74334f-oidev: 0/1
+16:37:30.809 Current status of app-deployment-njfjnxvdz8erpnz in tenant-74334f-oidev: 0/1
+16:37:31.635 Current status of app-deployment-njfjnxvdz8erpnz in tenant-74334f-oidev: 0/1
+16:37:32.957 Current status of app-deployment-njfjnxvdz8erpnz in tenant-74334f-oidev: 0/1
+16:37:34.186 Current status of app-deployment-njfjnxvdz8erpnz in tenant-74334f-oidev: 0/1
+16:37:35.005 Current status of app-deployment-njfjnxvdz8erpnz in tenant-74334f-oidev: 0/1
+16:37:36.337 Current status of app-deployment-njfjnxvdz8erpnz in tenant-74334f-oidev: 0/1
+16:37:37.173 Current status of app-deployment-njfjnxvdz8erpnz in tenant-74334f-oidev: 0/1
+16:37:37.993 Current status of app-deployment-njfjnxvdz8erpnz in tenant-74334f-oidev: 0/1
+16:37:38.827 Current status of app-deployment-njfjnxvdz8erpnz in tenant-74334f-oidev: 0/1
+16:37:39.638 Current status of app-deployment-njfjnxvdz8erpnz in tenant-74334f-oidev: 0/1
+16:37:40.449 Current status of app-deployment-njfjnxvdz8erpnz in tenant-74334f-oidev: 0/1
+16:37:41.700 Current status of app-deployment-njfjnxvdz8erpnz in tenant-74334f-oidev: 0/1
+16:37:42.993 Current status of app-deployment-njfjnxvdz8erpnz in tenant-74334f-oidev: 1/1
+16:37:42.994 Deployment app-deployment-njfjnxvdz8erpnz in tenant-74334f-oidev is now available

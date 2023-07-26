@@ -1,0 +1,121 @@
+12:20:30.025 asdf
+12:20:30.028 HTTP listening on *:90
+12:20:30.028 Matchmaker listening on *:9999
+12:20:39.591 asdf
+12:20:39.594 WARNING: No empty Cirrus servers are available
+12:20:39.594 entered
+12:20:39.597 out
+12:20:39.611 hello
+12:20:40.543 Pod created: V1Pod {
+  apiVersion: 'v1',
+  kind: 'Pod',
+  metadata: V1ObjectMeta {
+    annotations: {
+      'container.apparmor.security.beta.kubernetes.io/pixel-streaming-container': 'runtime/default',
+      'kubernetes.io/psp': 'restricted',
+      'lxcfs-admission-webhook.aliyun.com/status': 'mutated',
+      'seccomp.security.alpha.kubernetes.io/pod': 'docker/default'
+    },
+    creationTimestamp: 2023-07-12T06:50:40.000Z,
+    deletionGracePeriodSeconds: undefined,
+    deletionTimestamp: undefined,
+    finalizers: undefined,
+    generateName: undefined,
+    generation: undefined,
+    labels: { app: 'app1' },
+    managedFields: [ [V1ManagedFieldsEntry] ],
+    name: 'pixel-streaming-pod',
+    namespace: 'tenant-74334f-oidev',
+    ownerReferences: undefined,
+    resourceVersion: '40025643984',
+    selfLink: undefined,
+    uid: 'dbf1b81e-e006-42a8-9b90-0f922609ad7a'
+  },
+  spec: V1PodSpec {
+    activeDeadlineSeconds: undefined,
+    affinity: undefined,
+    automountServiceAccountToken: undefined,
+    containers: [ [V1Container] ],
+    dnsConfig: undefined,
+    dnsPolicy: 'ClusterFirst',
+    enableServiceLinks: true,
+    ephemeralContainers: undefined,
+    hostAliases: undefined,
+    hostIPC: undefined,
+    hostNetwork: undefined,
+    hostPID: undefined,
+    hostUsers: undefined,
+    hostname: undefined,
+    imagePullSecrets: [ [V1LocalObjectReference] ],
+    initContainers: undefined,
+    nodeName: undefined,
+    nodeSelector: { 'node.coreweave.cloud/class': 'gpu' },
+    os: undefined,
+    overhead: undefined,
+    preemptionPolicy: 'PreemptLowerPriority',
+    priority: 1000000,
+    priorityClassName: 'normal',
+    readinessGates: undefined,
+    restartPolicy: 'Always',
+    runtimeClassName: undefined,
+    schedulerName: 'default-scheduler',
+    securityContext: V1PodSecurityContext {
+      fsGroup: undefined,
+      fsGroupChangePolicy: undefined,
+      runAsGroup: undefined,
+      runAsNonRoot: undefined,
+      runAsUser: undefined,
+      seLinuxOptions: undefined,
+      seccompProfile: [V1SeccompProfile],
+      supplementalGroups: undefined,
+      sysctls: undefined,
+      windowsOptions: undefined
+    },
+    serviceAccount: 'default',
+    serviceAccountName: 'default',
+    setHostnameAsFQDN: undefined,
+    shareProcessNamespace: undefined,
+    subdomain: undefined,
+    terminationGracePeriodSeconds: 30,
+    tolerations: [
+      [V1Toleration],
+      [V1Toleration],
+      [V1Toleration],
+      [V1Toleration],
+      [V1Toleration]
+    ],
+    topologySpreadConstraints: undefined,
+    volumes: [
+      [V1Volume], [V1Volume],
+      [V1Volume], [V1Volume],
+      [V1Volume], [V1Volume],
+      [V1Volume], [V1Volume],
+      [V1Volume]
+    ]
+  },
+  status: V1PodStatus {
+    conditions: undefined,
+    containerStatuses: undefined,
+    ephemeralContainerStatuses: undefined,
+    hostIP: undefined,
+    initContainerStatuses: undefined,
+    message: undefined,
+    nominatedNodeName: undefined,
+    phase: 'Pending',
+    podIP: undefined,
+    podIPs: undefined,
+    qosClass: 'Guaranteed',
+    reason: undefined,
+    startTime: undefined
+  }
+}
+12:20:42.773 asdf
+12:20:42.774 WARNING: No empty Cirrus servers are available
+12:20:42.774 entered
+12:20:42.775 out
+12:20:42.781 hello
+12:20:45.939 asdf
+12:20:45.939 WARNING: No empty Cirrus servers are available
+12:20:45.939 entered
+12:20:45.940 out
+12:20:45.942 hello

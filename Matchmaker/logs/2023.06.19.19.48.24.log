@@ -1,0 +1,30 @@
+19:48:24.986 HTTP listening on *:90
+19:48:24.986 Matchmaker listening on *:9999
+19:48:28.176 Current status of app-deployment-foz41liri6yqxak in tenant-74334f-oidev: 0/1
+19:48:28.179 Deployment not available yet
+19:48:28.188 Current status of pixel-streaming-pod-foz41liri6yqxak: Pending
+19:48:29.458 Current status of pixel-streaming-pod-foz41liri6yqxak: Pending
+19:48:30.553 Current status of pixel-streaming-pod-foz41liri6yqxak: Pending
+19:48:30.837 Current status of pixel-streaming-pod-foz41liri6yqxak: Pending
+19:48:31.393 Current status of pixel-streaming-pod-foz41liri6yqxak: Pending
+19:48:32.102 Current status of pixel-streaming-pod-foz41liri6yqxak: Pending
+19:48:32.275 Current status of pixel-streaming-pod-foz41liri6yqxak: Pending
+19:48:33.132 Current status of pixel-streaming-pod-foz41liri6yqxak: Pending
+19:48:34.467 Current status of pixel-streaming-pod-foz41liri6yqxak: Pending
+19:48:35.732 Current status of pixel-streaming-pod-foz41liri6yqxak: Running
+19:48:35.732 Pod pixel-streaming-pod-foz41liri6yqxak in tenant-74334f-oidev is now Running
+19:48:35.795 Current status of pixel-streaming-pod-foz41liri6yqxak: Running
+19:48:35.796 Pod pixel-streaming-pod-foz41liri6yqxak in tenant-74334f-oidev is now Running
+19:48:36.541 Current status of app-deployment-foz41liri6yqxak in tenant-74334f-oidev: 1/1
+19:48:36.541 Deployment app-deployment-foz41liri6yqxak in tenant-74334f-oidev is now available
+19:48:36.542 1
+19:48:41.851 Current status of pixel-streaming-pod-foz41liri6yqxak: Running
+19:48:41.852 Pod pixel-streaming-pod-foz41liri6yqxak in tenant-74334f-oidev is now Running
+19:48:42.181 Current status of app-deployment-foz41liri6yqxak in tenant-74334f-oidev: 1/1
+19:48:42.181 Deployment app-deployment-foz41liri6yqxak in tenant-74334f-oidev is now available
+19:48:42.182 1
+19:49:22.789 Current status of pixel-streaming-pod-foz41liri6yqxak: Running
+19:49:22.789 Pod pixel-streaming-pod-foz41liri6yqxak in tenant-74334f-oidev is now Running
+19:49:23.644 Current status of app-deployment-foz41liri6yqxak in tenant-74334f-oidev: 1/1
+19:49:23.644 Deployment app-deployment-foz41liri6yqxak in tenant-74334f-oidev is now available
+19:49:23.644 1

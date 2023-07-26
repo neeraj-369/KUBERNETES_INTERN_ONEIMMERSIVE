@@ -1,0 +1,28 @@
+22:38:29.683 HTTP listening on *:90
+22:38:29.683 Matchmaker listening on *:9999
+22:39:04.535 Current status of app-deployment-hhzcci1gikh2w8h in tenant-74334f-oidev: 0/0
+22:39:04.537 Deployment app-deployment-hhzcci1gikh2w8h in tenant-74334f-oidev is now available
+22:39:05.010 Current status of pixel-streaming-pod-hhzcci1gikh2w8h: Pending
+22:39:06.392 Current status of pixel-streaming-pod-hhzcci1gikh2w8h: Pending
+22:39:07.047 Current status of pixel-streaming-pod-hhzcci1gikh2w8h: Pending
+22:39:07.377 Current status of pixel-streaming-pod-hhzcci1gikh2w8h: Pending
+22:39:08.094 Current status of pixel-streaming-pod-hhzcci1gikh2w8h: Pending
+22:39:08.434 Current status of pixel-streaming-pod-hhzcci1gikh2w8h: Pending
+22:39:09.572 Current status of pixel-streaming-pod-hhzcci1gikh2w8h: Pending
+22:39:09.870 Current status of pixel-streaming-pod-hhzcci1gikh2w8h: Running
+22:39:09.871 Pod pixel-streaming-pod-hhzcci1gikh2w8h in tenant-74334f-oidev is now Running
+22:39:10.573 Current status of pixel-streaming-pod-hhzcci1gikh2w8h: Running
+22:39:10.574 Pod pixel-streaming-pod-hhzcci1gikh2w8h in tenant-74334f-oidev is now Running
+22:39:11.049 Current status of app-deployment-hhzcci1gikh2w8h in tenant-74334f-oidev: 1/1
+22:39:11.050 Deployment app-deployment-hhzcci1gikh2w8h in tenant-74334f-oidev is now available
+22:39:11.050 1
+22:39:12.396 Current status of pixel-streaming-pod-hhzcci1gikh2w8h: Running
+22:39:12.396 Pod pixel-streaming-pod-hhzcci1gikh2w8h in tenant-74334f-oidev is now Running
+22:39:12.902 Current status of app-deployment-hhzcci1gikh2w8h in tenant-74334f-oidev: 1/1
+22:39:12.903 Deployment app-deployment-hhzcci1gikh2w8h in tenant-74334f-oidev is now available
+22:39:12.903 1
+22:39:16.966 Current status of pixel-streaming-pod-hhzcci1gikh2w8h: Running
+22:39:16.967 Pod pixel-streaming-pod-hhzcci1gikh2w8h in tenant-74334f-oidev is now Running
+22:39:18.006 Current status of app-deployment-hhzcci1gikh2w8h in tenant-74334f-oidev: 1/1
+22:39:18.007 Deployment app-deployment-hhzcci1gikh2w8h in tenant-74334f-oidev is now available
+22:39:18.007 1

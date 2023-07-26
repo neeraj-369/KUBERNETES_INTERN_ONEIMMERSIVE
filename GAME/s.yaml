@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+  - name: my-container
+    image: neerajpolavarapu/mm:mm
+    volumeMounts:
+    - name: data-volume
+      mountPath: /data
+  volumes:
+  - name: data-volume
+    configMap:
+      name: my-zip-file
+      items:
+      - key: code.zip
+        path: code.zip

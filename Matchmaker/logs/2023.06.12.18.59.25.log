@@ -1,0 +1,7 @@
+18:59:25.561 HTTP listening on *:90
+18:59:25.561 Matchmaker listening on *:9999
+18:59:27.128 WARNING: No empty Cirrus servers are available
+18:59:27.142 redicting......
+18:59:27.145 Error creating resources: TypeError: Cannot read properties of undefined (reading 'redirect')
+    at createResourcesAndRedirect (/Users/neeraj/Desktop/kubernetes/Matchmaker/matchmaker.js:636:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)

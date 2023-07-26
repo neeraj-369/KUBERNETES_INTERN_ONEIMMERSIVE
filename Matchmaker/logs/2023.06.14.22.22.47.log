@@ -1,0 +1,14 @@
+22:22:47.234 HTTP listening on *:90
+22:22:47.234 Matchmaker listening on *:9999
+22:22:51.608 Current status of pixel-streaming-pod-wvguta1ylpww0hr: Pending
+22:22:51.658 Current status of app-deployment-wvguta1ylpww0hr in tenant-74334f-oidev: 0/1
+22:22:51.659 Deployment not available yet
+22:22:52.573 0
+22:22:53.265 Current status of app-deployment-wvguta1ylpww0hr in tenant-74334f-oidev: 0/1
+22:22:53.266 Deployment not available yet
+22:22:54.590 0
+22:22:55.234 Current status of app-deployment-wvguta1ylpww0hr in tenant-74334f-oidev: 0/1
+22:22:55.235 Deployment not available yet
+22:22:56.619 0
+22:22:57.139 Current status of app-deployment-wvguta1ylpww0hr in tenant-74334f-oidev: 1/1
+22:22:57.140 Deployment app-deployment-wvguta1ylpww0hr in tenant-74334f-oidev is now available

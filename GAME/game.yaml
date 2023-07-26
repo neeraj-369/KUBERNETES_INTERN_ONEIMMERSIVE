@@ -16,11 +16,11 @@ spec:
           protocol: TCP
         - containerPort: 8888
           protocol: UDP
-      resources:
-        limits:
-          cpu: "4"
-          memory: 1Gi
-          nvidia.com/gpu: 4
+      # resources:
+      #   limits:
+      #     cpu: "4"
+      #     memory: 1Gi
+      #     nvidia.com/gpu: 4
 
 
 
