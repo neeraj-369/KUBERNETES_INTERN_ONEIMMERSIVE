@@ -42,7 +42,7 @@ let rAF = window.mozRequestAnimationFrame ||
 let webRtcPlayerObj = null;
 let print_stats = false;
 let print_inputs = false;
-let connect_on_load = true; 
+let connect_on_load = false;
 let ws;
 const WS_OPEN_STATE = 1;
 
@@ -59,7 +59,7 @@ let resizeTimeout;
 let responseEventListeners = new Map();
 
 let freezeFrameOverlay = null;
-let shouldShowPlayOverlay = false;
+let shouldShowPlayOverlay = true;
 
 let isFullscreen = false;
 let isMuted = false;
@@ -489,11 +489,6 @@ function onProtocolMessage(data) {
                         return;
                     }
 
-					if(messageType === "GamepadAnalog") {
-						// We don't want to update the GamepadAnalog message type as UE sends it with an incorrect bytelength
-						return;
-					}
-
                     if (toStreamerHandlers[messageType]) {
                         // If we've registered a handler for this message type we can add it to our supported messages. ie registerMessageHandler(...)
                         toStreamerMessages.add(messageType, message);
@@ -893,8 +888,6 @@ function setupToggleWithUrlParams(toggleId, urlParameterKey){
                 urlParams.delete(urlParameterKey);
             }
             window.history.replaceState({}, '', urlParams.toString() !== "" ? `${location.pathname}?${urlParams}` : `${location.pathname}`);
-            //restartStream()
-            restartStream();
         });
     }
 }
@@ -1043,22 +1036,15 @@ function playVideo() {
 }
 
 function showPlayOverlay() {
-    // let img = document.createElement('img');
-    // img.id = 'playButton';
-    // img.src = '/images/Play.png';
-    // img.alt = 'Start Streaming';
-    // setOverlay('clickableState', img, event => {
-    //     playStream();
-    // });
-    playStream();
-    // shouldShowPlayOverlay = false;
+    let img = document.createElement('img');
+    img.id = 'playButton';
+    img.src = '/images/Play.png';
+    img.alt = 'Start Streaming';
+    setOverlay('clickableState', img, event => {
+        playStream();
+    });
+    shouldShowPlayOverlay = false;
 }
-
-// window.onload = function() {
-//     // document.getElementById('playButton').click();
-//     playStream();
-//     console.log('clicked playButton');
-// }
 
 function updateAfkOverlayText() {
     afk.overlay.innerHTML = '<center>No activity detected<br>Disconnecting in ' + afk.countdown + ' seconds<br>Click to continue<br></center>';
@@ -1159,12 +1145,9 @@ function showFreezeFrame() {
         resizeFreezeFrameOverlay();
         if (shouldShowPlayOverlay) {
             showPlayOverlay();
-            // playStream();
-            // console.log('playstream from showFreezeFrame()')
             resizePlayerStyle();
         } else {
             showFreezeFrameOverlay();
-            // playStream();
         }
         setTimeout(() => {
             webRtcPlayerObj.setVideoEnabled(false);
@@ -1350,13 +1333,13 @@ function setupWebRtcPlayer(htmlElement, config) {
 
     webRtcPlayerObj.onVideoInitialised = function() {
         if (ws && ws.readyState === WS_OPEN_STATE) {
-            if (shouldShowPlayOverlay ) {
+            if (shouldShowPlayOverlay) {
                 showPlayOverlay();
                 resizePlayerStyle();
             }
             else {
                 resizePlayerStyle();
-                // playStream();
+                playStream();
             }
         }
     };
@@ -2459,9 +2442,133 @@ const SpecialKeyCodes = {
     RightAlt: 255
 };
 
-// We want to be able to differentiate between left and right versions of some
-// keys.
+/* 
+* New browser APIs have moved away from KeyboarddEvent.keyCode to KeyboardEvent.Code. 
+* For details see: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode#constants_for_keycode_value
+* We still use old KeyboardEvent.keyCode integers in the UE C++ side, so we need a way to map the new
+* string-based KeyboardEvenet.Code to the old integers.
+*/
+const CodeToKeyCode = {
+    "Escape": 27,
+    "Digit0": 48,
+    "Digit1": 49,
+    "Digit2": 50,
+    "Digit3": 51,
+    "Digit4": 52,
+    "Digit5": 53,
+    "Digit6": 54,
+    "Digit7": 55,
+    "Digit8": 56,
+    "Digit9": 57,
+    "Minus": 173,
+    "Equal": 187,
+    "Backspace": 8,
+    "Tab": 9,
+    "KeyQ": 81,
+    "KeyW": 87,
+    "KeyE": 69,
+    "KeyR": 82,
+    "KeyT": 84,
+    "KeyY": 89,
+    "KeyU": 85,
+    "KeyI": 73,
+    "KeyO": 79,
+    "KeyP": 80,
+    "BracketLeft": 219,
+    "BracketRight": 221,
+    "Enter": 13,
+    "ControlLeft": 17,
+    "KeyA": 65,
+    "KeyS": 83,
+    "KeyD": 68,
+    "KeyF": 70,
+    "KeyG": 71,
+    "KeyH": 72,
+    "KeyJ": 74,
+    "KeyK": 75,
+    "KeyL": 76,
+    "Semicolon": 186,
+    "Quote": 222,
+    "Backquote": 192,
+    "ShiftLeft": 16,
+    "Backslash": 220,
+    "KeyZ": 90,
+    "KeyX": 88,
+    "KeyC": 67,
+    "KeyV": 86,
+    "KeyB": 66,
+    "KeyN": 78,
+    "KeyM": 77,
+    "Comma": 188,
+    "Period": 190,
+    "Slash": 191,
+    "ShiftRight": 253,
+    "AltLeft": 18,
+    "Space": 32,
+    "CapsLock": 20,
+    "F1": 112,
+    "F2": 113,
+    "F3": 114,
+    "F4": 115,
+    "F5": 116,
+    "F6": 117,
+    "F7": 118,
+    "F8": 119,
+    "F9": 120,
+    "F10": 121,
+    "F11": 122,
+    "F12": 123,
+    "Pause": 19,
+    "ScrollLock": 145,
+    "NumpadDivide": 111,
+    "NumpadMultiply": 106,
+    "NumpadSubtract": 109,
+    "NumpadAdd": 107,
+    "NumpadDecimal": 110,
+    "Numpad9": 105,
+    "Numpad8": 104,
+    "Numpad7": 103,
+    "Numpad6": 102,
+    "Numpad5": 101,
+    "Numpad4": 100,
+    "Numpad3": 99,
+    "Numpad2": 98,
+    "Numpad1": 97,
+    "Numpad0": 96,
+    "NumLock": 144,
+    "ControlRight": 254,
+    "AltRight": 255,
+    "Home": 36,
+    "End": 35,
+    "ArrowUp": 38,
+    "ArrowLeft": 37,
+    "ArrowRight": 39,
+    "ArrowDown": 40,
+    "PageUp": 33,
+    "PageDown": 34,
+    "Insert": 45,
+    "Delete": 46,
+    "ContextMenu": 93
+};
+
+
 function getKeyCode(e) {
+
+    // If we don't have keyCode property because browser API is deprecated then use KeyboardEvent.code instead.
+    // See: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode#constants_for_keycode_value
+    if(!("keyCode" in e)) {
+        // Convert KeyboardEvent.code string into integer-based key code for backwards compatibility reasons.
+        if(e.code in CodeToKeyCode) {
+            return CodeToKeyCode[e.code];
+        } else {
+            console.warn(`Keyboard code of ${e.code} is not supported in our mapping, ignoring this key.`);
+            return null;
+        }
+    }
+
+    // If we made it here KeyboardEvent.keyCode is still supported so we can safely use it.
+
+    // Below logic is so we can detect and differentiate between left and right versions of some keys.
     if (e.keyCode === SpecialKeyCodes.Shift && e.code === 'ShiftRight') return SpecialKeyCodes.RightShift;
     else if (e.keyCode === SpecialKeyCodes.Control && e.code === 'ControlRight') return SpecialKeyCodes.RightControl;
     else if (e.keyCode === SpecialKeyCodes.Alt && e.code === 'AltRight') return SpecialKeyCodes.RightAlt;
@@ -2469,15 +2576,22 @@ function getKeyCode(e) {
 }
 
 function registerKeyboardEvents() {
+
     document.onkeydown = function(e) {
+
+        const keyCode = getKeyCode(e);
+        if(!keyCode) { return; }
+
         if (print_inputs) {
-            console.log(`key down ${e.keyCode}, repeat = ${e.repeat}`);
+            console.log(`key down ${keyCode}, repeat = ${e.repeat}`);
         }
-        toStreamerHandlers.KeyDown("KeyDown", [getKeyCode(e), e.repeat]);
-        activeKeys.push(getKeyCode(e));
+
+        toStreamerHandlers.KeyDown("KeyDown", [keyCode, e.repeat]);
+        activeKeys.push(keyCode);
+
         // Backspace is not considered a keypress in JavaScript but we need it
         // to be so characters may be deleted in a UE text entry field.
-        if (e.keyCode === SpecialKeyCodes.BackSpace) {
+        if (keyCode === SpecialKeyCodes.BackSpace) {
             document.onkeypress({
                 charCode: SpecialKeyCodes.BackSpace
             });
@@ -2485,19 +2599,32 @@ function registerKeyboardEvents() {
         if (inputOptions.suppressBrowserKeys && isKeyCodeBrowserKey(e.keyCode)) {
             e.preventDefault();
         }
+
     };
 
     document.onkeyup = function(e) {
+
+        const keyCode = getKeyCode(e);
+        if(!keyCode) { return; }
+
         if (print_inputs) {
-            console.log(`key up ${e.keyCode}`);
+            console.log(`key up ${keyCode}`);
         }
-        toStreamerHandlers.KeyUp("KeyUp", [getKeyCode(e), e.repeat]);
-        if (inputOptions.suppressBrowserKeys && isKeyCodeBrowserKey(e.keyCode)) {
+        toStreamerHandlers.KeyUp("KeyUp", [keyCode, e.repeat]);
+
+        // if we are suppressing browser keys and this key is a browser key then cancel it from being used in browser
+        if (inputOptions.suppressBrowserKeys && isKeyCodeBrowserKey(keyCode)) {
             e.preventDefault();
         }
     };
 
-    document.onkeypress = function(e) {
+    document.onkeypress = function(e){
+        if(!("charCode" in e)){
+            console.warn("KeyboardEvent.charCode is deprecated in this browser, cannot send key press.");
+            return;
+        }
+        // @ts-ignore: deprecation is being used safely
+        const charCode = e.charCode;
         if (print_inputs) {
             console.log(`key press ${e.charCode}`);
         }

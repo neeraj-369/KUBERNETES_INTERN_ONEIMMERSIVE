@@ -1,0 +1,47 @@
+22:20:17.082 HTTP listening on *:90
+22:20:17.082 Matchmaker listening on *:9999
+22:20:29.388 ERROR (SyntaxError: Unexpected token 'G', "GET / HTTP"... is not valid JSON): Failed to parse Cirrus information from data: GET / HTTP/1.1
+Host: localhost:9999
+Sec-Fetch-Site: none
+Cookie: connect.sid=s%3AUsAEcgQwMDG5DA22ufzDg_Qdn91osZxR.iLR61dKo6O7IqH0AyvKsBC27MBcV6P85XbxST4nmltQ
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Mode: navigate
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Safari/605.1.15
+Accept-Language: en-IN,en-GB;q=0.9,en;q=0.8
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate
+
+
+22:20:29.390 Ending connection to remote address ::1
+22:20:29.399 ERROR (SyntaxError: Unexpected token 'G', "GET / HTTP"... is not valid JSON): Failed to parse Cirrus information from data: GET / HTTP/1.1
+Host: localhost:9999
+Sec-Fetch-Site: none
+Cookie: connect.sid=s%3AUsAEcgQwMDG5DA22ufzDg_Qdn91osZxR.iLR61dKo6O7IqH0AyvKsBC27MBcV6P85XbxST4nmltQ
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Mode: navigate
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Safari/605.1.15
+Accept-Language: en-IN,en-GB;q=0.9,en;q=0.8
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate
+
+
+22:20:29.400 Ending connection to remote address ::1
+22:20:29.406 ERROR (SyntaxError: Unexpected token 'G', "GET / HTTP"... is not valid JSON): Failed to parse Cirrus information from data: GET / HTTP/1.1
+Host: localhost:9999
+Sec-Fetch-Site: none
+Cookie: connect.sid=s%3AUsAEcgQwMDG5DA22ufzDg_Qdn91osZxR.iLR61dKo6O7IqH0AyvKsBC27MBcV6P85XbxST4nmltQ
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Mode: navigate
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Safari/605.1.15
+Accept-Language: en-IN,en-GB;q=0.9,en;q=0.8
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate
+
+
+22:20:29.407 Ending connection to remote address ::1

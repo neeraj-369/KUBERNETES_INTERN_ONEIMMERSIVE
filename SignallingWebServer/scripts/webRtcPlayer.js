@@ -131,8 +131,7 @@ function webRtcPlayer(parOptions) {
         video.id = "streamingVideo";
         video.playsInline = true;
         video.disablePictureInPicture = true;
-        video.muted = true;
-        video.autoplay = true;
+        video.muted = self.startVideoMuted;;
         
         video.addEventListener('loadedmetadata', function(e){
             if(self.onVideoInitialised){
@@ -202,7 +201,7 @@ function webRtcPlayer(parOptions) {
             handleOnAudioTrack(e.streams[0]);
             return;
         }
-        else(e.track.kind == "video")
+        else if(e.track.kind == "video")
         {
             for (const s of e.streams) {
                 if (!self.availableVideoStreams.has(s.id)) {
@@ -319,7 +318,7 @@ function webRtcPlayer(parOptions) {
         }
 
         // Force mono or stereo based on whether ?forceMono was passed or not
-        audioSDP += self.forceMonoAudio ? 'stereo=0;' : 'stereo=1;';
+        audioSDP += self.forceMonoAudio ? 'sprop-stereo=0;stereo=0;' : 'sprop-stereo=1;stereo=1;';
 
         // enable in-band forward error correction for opus audio
         audioSDP += 'useinbandfec=1';
@@ -478,7 +477,7 @@ function webRtcPlayer(parOptions) {
         }
         else
         {
-            let audioSendOptions = self.useMic ?
+            let audioSendOptions = self.useMic ? 
             {
                 autoGainControl: false,
                 channelCount: 1,
@@ -488,13 +487,10 @@ function webRtcPlayer(parOptions) {
                 sampleRate: 48000,
                 sampleSize: 16,
                 volume: 1.0
-            } : true;
+            } : false;
 
             // Note using mic on android chrome requires SSL or chrome://flags/ "unsafely-treat-insecure-origin-as-secure"
-            const stream = await navigator.mediaDevices.getUserMedia({video: false, audio: true})
-                .then(console.log('Attempted to use Microphone'))
-                .catch(console.error());
-            // const stream = await navigator.mediaDevices.getUserMedia({video: false, audio: audioSendOptions});
+            const stream = await navigator.mediaDevices.getUserMedia({video: false, audio: audioSendOptions});
             if(stream)
             {
                 if(hasTransceivers){

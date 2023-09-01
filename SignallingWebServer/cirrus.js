@@ -4,7 +4,7 @@
 
 var express = require('express');
 var app = express();
-
+const k8s = require('@kubernetes/client-node');
 const fs = require('fs');
 const path = require('path');
 const querystring = require('querystring');
@@ -12,32 +12,76 @@ const bodyParser = require('body-parser');
 const logging = require('./modules/logging.js');
 logging.RegisterConsoleLogger();
 
-// Command line argument --configFile needs to be checked before loading the config, all other command line arguments are dealt with through the config object
+const kubeconfigText = `
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUMvVENDQWVXZ0F3SUJBZ0lSQU9aYmIxbVZkUk5pbkVZd05aR3d5TGd3RFFZSktvWklodmNOQVFFTEJRQXcKR0RFV01CUUdBMVVFQXhNTlkyOXlaWGRsWVhabExtTnZiVEFlRncweU1UQTRNall3TURNeU1qWmFGdzB6TVRBNApNall4TWpNeU1qWmFNQmd4RmpBVUJnTlZCQU1URFdOdmNtVjNaV0YyWlM1amIyMHdnZ0VpTUEwR0NTcUdTSWIzCkRRRUJBUVVBQTRJQkR3QXdnZ0VLQW9JQkFRRFkra0FTSzFOZFdwNW5XdExBN05mSS9rc3k0cU9mOWVZRGNxb00KemppODFHQUJlenNFSjBFc1NVclhpSUd6Z29TYkV3L1BKQXZDZGRURXRlTWQ0RU93NnNTVWU4SFFHV1dxcTBmVgpvdzMwanJQcWxramEzSmZhWWJMWi9Pc3A2enZXbml3eXNTVmJlQmJFTlFFL2RuVDN4UmdTTFl3TlJGcDcwZnU1CkJqbW9MZjhjYzdFMlp0TkF1cHRRVUJiMzdLSnlJYlJYOTdnV3B0QnJPOXN0ZWFTMUkwcGNTSHBvYWFBYzBIbGgKYkRNZTQyYkxFbjFkQ0tud1ZEWnBRSVAvTFc0UGM4NmEvYTJDZzZnMmJCcWhTWFFPNzBybHZ0aXVGYmwrTDZoRApxZU14ckl5MmR1MWE1VU9HcU9iTDkwczIxVE0vR3F5MTRaQU1ndVhsTFlCajVIWi9BZ01CQUFHalFqQkFNQTRHCkExVWREd0VCL3dRRUF3SUNwREFQQmdOVkhSTUJBZjhFQlRBREFRSC9NQjBHQTFVZERnUVdCQlNKTUpNUDJnOHAKeGxUelB4Ulp4cFkyZEFOMVVUQU5CZ2txaGtpRzl3MEJBUXNGQUFPQ0FRRUFEQWYxb3R2Y1FzZjZVODN2b0RvSAo3ZVhnSUdPUVZoMzh6VlgwSzh5cUV1ampjcDRZZ0o2OXJoektsQ3A3SGlMZEdzV3dmRkc3b25NeUtxYUNHSWJnCmFHc1NzVU9nOHhxelJ1UEpJU2RDa3B6VVdualNmRW03dU5vRlJJd0x6UHFmZ2IrWnJRNEdSaGFQMkxudkFKZ1oKbVNCczZMeDdGWnk0R2xYdlQ1QUhaMnNvSHdSMnNONEFqNjdkcHFzVk80QUcyZk0remg5MGZHTkRhSWxVeFVySwoxNGlUVW9IUVVlU2FhcTIrdkdWYmhlK2lOVW9DNTVmV29oL2svVm1PSVdyRnFwTW5IeFdKditHakRTZ3Q0WldWCk1qTVdCNFZsbWlCbmpEM25ib0dZVHJGVXd5M21GV2hnejNIanpRNzF2bDVlTnFaRzFtVGwycTRFUTBScE5Sd1kKRGc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    server: https://k8s.ord1.coreweave.com
+  name: coreweave
+contexts:
+- context:
+    cluster: coreweave
+    namespace: tenant-74334f-oidev
+    user: token-Kkn7HYfPzuXKApoTiaMk
+  name: coreweave
+current-context: coreweave
+kind: Config
+users:
+- name: token-Kkn7HYfPzuXKApoTiaMk
+  user:
+    token: CHtnnc6xgtrQGH9pQ2P9cngsDCdzjpdQmfV7kF9C
+`;
 
+// Command line argument --configFile needs to be checked before loading the config, all other command line arguments are dealt with through the config object
+const kc = new k8s.KubeConfig();
+kc.loadFromString(kubeconfigText);
 const defaultConfig = {
-	UseFrontend: false,
-	UseMatchmaker: false,
-	UseHTTPS: false,
-	UseAuthentication: false,
-	LogToFile: true,
-	LogVerbose: true,
-	HomepageFile: 'player.html',
-	AdditionalRoutes: new Map(),
-	EnableWebserver: true,
-	MatchmakerAddress: "",
-	MatchmakerPort: "9999",
-	PublicIp: "localhost",
-	HttpPort: 80,
-	HttpsPort: 443,
-	StreamerPort: 8888,
-	SFUPort: 8889,
-	MaxPlayerCount: -1
+    UseFrontend: false,
+    UseMatchmaker: true,
+    UseHTTPS: false,
+    UseAuthentication: false,
+    LogToFile: true,
+    LogVerbose: true,
+    HomepageFile: 'player.html',
+    AdditionalRoutes: new Map(),
+    EnableWebserver: true,
+    MatchmakerAddress: "mm-service",
+    MatchmakerPort: "9999",
+    PublicIp: "localhost",
+    HttpPort: 80,
+    HttpsPort: 443,
+    StreamerPort: 8888,
+    SFUPort: 8889,
+    MaxPlayerCount: -1,
+    peerConnectionOptions:'{ "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}, {"urls":["turn:coturn.tenant-74334f-oidev.lga1.ingress.coreweave.cloud:3478"],"username":"PixelStreamingUser","credential":"AnotherTURNintheroad"}]}'
 };
 
+const args = process.argv.slice(2);
+var hash = args[3];
+var namei = args[4];
+
+
+if (args.length >= 3) {
+  defaultConfig.peerConnectionOptions = {
+    iceServers: [
+      {
+        urls: ['stun:stun.l.google.com:19302']
+      },
+      {
+        urls: ['turn:' + args[0]],
+        username: args[1],
+        credential: args[2]
+      }
+    ]
+  };
+}
+
+defaultConfig.peerConnectionOptions = JSON.stringify(defaultConfig.peerConnectionOptions);
 const argv = require('yargs').argv;
 var configFile = (typeof argv.configFile != 'undefined') ? argv.configFile.toString() : path.join(__dirname, 'config.json');
 console.log(`configFile ${configFile}`);
-const config = require('./modules/config.js').init(configFile, defaultConfig);
+var config = require('./modules/config.js').init(configFile, defaultConfig);
 
 if (config.LogToFile) {
 	logging.RegisterFileLogger('./logs');
@@ -48,7 +92,6 @@ console.log("Config: " + JSON.stringify(config, null, '\t'));
 var http = require('http').Server(app);
 
 if (config.UseHTTPS) {
-	//HTTPS certificate details
 	const options = {
 		key: fs.readFileSync(path.join(__dirname, './certificates/client-key.pem')),
 		cert: fs.readFileSync(path.join(__dirname, './certificates/client-cert.pem'))
@@ -79,7 +122,11 @@ if (config.UseFrontend) {
 	var httpsPort = 8000;
 
 	//Required for self signed certs otherwise just get an error back when sending request to frontend see https://stackoverflow.com/a/35633993
-	process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"
+	if (config.UseHTTPS && config.DisableSSLCert) {
+		//Required for self signed certs otherwise just get an error back when sending request to frontend see https://stackoverflow.com/a/35633993
+		console.logColor(logging.Orange, 'WARNING: config.DisableSSLCert is true. Unauthorized SSL certificates will be allowed! This is convenient for local testing but please DO NOT SHIP THIS IN PRODUCTION. To remove this warning please set DisableSSLCert to false in your config.json.');
+		process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"
+	}
 
 	const httpsClient = require('./modules/httpsClient.js');
 	var webRequest = new httpsClient();
@@ -91,7 +138,7 @@ if (config.UseFrontend) {
 var streamerPort = config.StreamerPort; // port to listen to Streamer connections
 var sfuPort = config.SFUPort;
 
-var matchmakerAddress = '127.0.0.1';
+var matchmakerAddress = "mm-service" + "-" + namei;
 var matchmakerPort = 9999;
 var matchmakerRetryInterval = 5;
 var matchmakerKeepAliveInterval = 30;
@@ -99,19 +146,18 @@ var maxPlayerCount = -1;
 
 var gameSessionId;
 var userSessionId;
-var serverPublicIp;
+var serverPublicIp = "http://game" + hash + ".tenant-74334f-oidev.lga1.ingress.coreweave.cloud/";
 
 // `clientConfig` is send to Streamer and Players
 // Example of STUN server setting
 // let clientConfig = {peerConnectionOptions: { 'iceServers': [{'urls': ['stun:34.250.222.95:19302']}] }};
 var clientConfig = { type: 'config', peerConnectionOptions: {} };
-
 // Parse public server address from command line
 // --publicIp <public address>
 try {
-	if (typeof config.PublicIp != 'undefined') {
-		serverPublicIp = config.PublicIp.toString();
-	}
+	// if (typeof config.PublicIp != 'undefined') {
+	// 	serverPublicIp = config.PublicIp.toString();
+	// }
 
 	if (typeof config.HttpPort != 'undefined') {
 		httpPort = config.HttpPort;
@@ -140,9 +186,9 @@ try {
 		console.log("No peerConnectionConfig")
 	}
 
-	if (typeof config.MatchmakerAddress != 'undefined') {
-		matchmakerAddress = config.MatchmakerAddress;
-	}
+	// if (typeof config.MatchmakerAddress != 'undefined') {
+	// 	matchmakerAddress = config.MatchmakerAddress;
+	// }
 
 	if (typeof config.MatchmakerPort != 'undefined') {
 		matchmakerPort = config.MatchmakerPort;
@@ -188,6 +234,16 @@ if (config.UseHTTPS) {
 }
 
 sendGameSessionData();
+
+// set up rate limiter: maximum of five requests per minute
+var RateLimit = require('express-rate-limit');
+var limiter = RateLimit({
+  windowMs: 1*60*1000, // 1 minute
+  max: 60
+});
+
+// apply rate limiter to all requests
+app.use(limiter);
 
 //Setup the login page if we are using authentication
 if(config.UseAuthentication){
@@ -283,14 +339,20 @@ function sfuIsConnected() {
 
 function logIncoming(sourceName, msgType, msg) {
 	if (config.LogVerbose)
+	{
+		console.log("hello");
 		console.logColor(logging.Blue, "\x1b[37m-> %s\x1b[34m: %s", sourceName, msg);
+	}
 	else
 		console.logColor(logging.Blue, "\x1b[37m-> %s\x1b[34m: %s", sourceName, msgType);
 }
 
 function logOutgoing(destName, msgType, msg) {
 	if (config.LogVerbose)
-		console.logColor(logging.Green, "\x1b[37m<- %s\x1b[32m: %s", destName, msg);
+		{
+			console.log("hi")
+			console.logColor(logging.Green, "\x1b[37m<- %s\x1b[32m: %s", destName, msg);
+		}
 	else
 		console.logColor(logging.Green, "\x1b[37m<- %s\x1b[32m: %s", destName, msgType);
 }
@@ -359,6 +421,7 @@ streamerServer.on('connection', function (ws, req) {
 			// just send pings back to sender
 			if (msg.type == 'ping') {
 				const rawMsg = JSON.stringify({ type: "pong", time: msg.time});
+				console.log("hello");
 				logOutgoing("Streamer", msg.type, rawMsg);
 				ws.send(rawMsg);
 				return;
@@ -385,6 +448,7 @@ streamerServer.on('connection', function (ws, req) {
 				}
 			} else {
 				console.error(`unsupported Streamer message type: ${msg.type}`);
+				streamer.close(1008, 'Unsupported message type');
 			}
 		} catch(err) {
 			console.error(`ERROR: ws.on message error: ${err.message}`);
@@ -534,21 +598,18 @@ playerServer.on('connection', function (ws, req) {
 		ws.close(1013, `too many connections. max: ${maxPlayerCount}, current: ${playerCount}`);
 		return;
 	}
-
 	++playerCount;
 	let playerId = (++nextPlayerId).toString();
 	console.logColor(logging.Green, `player ${playerId} (${req.connection.remoteAddress}) connected`);
 	players.set(playerId, { ws: ws, id: playerId });
-
 	function sendPlayersCount() {
 		let playerCountMsg = JSON.stringify({ type: 'playerCount', count: players.size });
 		for (let p of players.values()) {
 			p.ws.send(playerCountMsg);
 		}
 	}
-	
-	ws.on('message', (msgRaw) =>{
 
+	ws.on('message', (msgRaw) =>{
 		var msg;
 		try {
 			msg = JSON.parse(msgRaw);
@@ -586,6 +647,7 @@ playerServer.on('connection', function (ws, req) {
 		}
 		else {
 			console.error(`player ${playerId}: unsupported message type: ${msg.type}`);
+			ws.close(1008, 'Unsupported message type');
 			return;
 		}
 	});
@@ -603,13 +665,59 @@ playerServer.on('connection', function (ws, req) {
 			sendPlayerDisconnectedToFrontend();
 			sendPlayerDisconnectedToMatchmaker();
 			sendPlayersCount();
+			console.log("sample");
 		} catch(err) {
 			console.logColor(logging.Red, `ERROR:: onPlayerDisconnected error: ${err.message}`);
 		}
 	}
 
 	ws.on('close', function(code, reason) {
-		console.logColor(logging.Yellow, `player ${playerId} connection closed: ${code} - ${reason}`);
+		// console.log("worked")
+
+		// console.log(hash);
+		// const tenantname = 'tenant-74334f-oidev';
+		// podNamei = "pixel-streaming-pod" + hash;
+		// deploymentNamei = "app-deployment" + hash;
+		// serviceNamei = "app-service" + hash;
+		// ingressNamei = "app-ingress" + hash;
+
+		// const k8sApi1 = kc.makeApiClient(k8s.CoreV1Api);
+		// k8sApi1.deleteNamespacedPod(podNamei, tenantname)
+		//   .then(() => {
+		// 	console.log(`Deleted pod: ${podNamei}`);
+		//   })
+		//   .catch((error) => {
+		// 	console.error(`Error deleting pod: ${error}`);
+		//   });
+		
+		// const k8sApi2 = kc.makeApiClient(k8s.AppsV1Api);
+		// k8sApi2.deleteNamespacedDeployment(deploymentNamei, tenantname)
+		//   .then(() => {
+		// 	console.log(`Deleted deployment: ${deploymentNamei}`);
+		//   })
+		//   .catch((error) => {
+		// 	console.error(`Error deleting deployment: ${error}`);
+		//   });
+		
+		// const k8sApi3 = kc.makeApiClient(k8s.CoreV1Api);
+		// k8sApi3.deleteNamespacedService(serviceNamei, tenantname)
+		//   .then(() => {
+		// 	console.log(`Deleted service: ${serviceNamei}`);
+		//   })
+		//   .catch((error) => {
+		// 	console.error(`Error deleting service: ${error}`);
+		//   });
+		
+		// const k8sApi4 = kc.makeApiClient(k8s.NetworkingV1Api);
+		// k8sApi4.deleteNamespacedIngress(ingressNamei, tenantname)
+		//   .then(() => {
+		// 	console.log(`Deleted ingress: ${ingressNamei}`);
+		//   })
+		//   .catch((error) => {
+		// 	console.error(`Error deleting ingress: ${error}`);
+		//   });
+		
+		console.logColor(logging.Yellow, `player ${playerId} connectioasdfasdn closed: ${code} - ${reason}`);
 		onPlayerDisconnected();
 	});
 
@@ -673,10 +781,12 @@ if (config.UseMatchmaker) {
 		// Add the new playerConnected flag to the message body to the MM
 		message = {
 			type: 'connect',
-			address: typeof serverPublicIp === 'undefined' ? '127.0.0.1' : serverPublicIp,
+			address: "http://game" + hash + ".tenant-74334f-oidev.lga1.ingress.coreweave.cloud/",
 			port: httpPort,
+			hash: hash,
 			ready: streamer && streamer.readyState === 1,
-			playerConnected: playerConnected
+			playerConnected: playerConnected,
+			
 		};
 
 		matchmaker.write(JSON.stringify(message));
@@ -758,7 +868,7 @@ function sendUserSessionData(serverPort) {
 	//If we are not using the frontend web server don't try and make requests to it
 	if (!config.UseFrontend)
 		return;
-	webRequest.get(`${FRONTEND_WEBSERVER}/server/requestUserSessionId?gameSessionId=${gameSessionId}&serverPort=${serverPort}&appName=${querystring.escape(clientConfig.AppName)}&appDescription=${querystring.escape(clientConfig.AppDescription)}${(typeof serverPublicIp === 'undefined' ? '' : '&serverHost=' + serverPublicIp)}`,
+	webRequest.get(`${FRONTEND_WEBSERVER}/server/requestUserSessionId?gameSessionId=${gameSessionId}&serverPort=${serverPort}&appName=${querystring.escape(clientConfig.AppName)}&appDescription=${querystring.escape(clientConfig.AppDescription)}${(typeof serverPublicIp === 'undefined' ? '' : '&serverHost=' + "http://game" + hash + ".tenant-74334f-oidev.lga1.ingress.coreweave.cloud/")}`,
 		function (response, body) {
 			if (response.statusCode === 410) {
 				sendUserSessionData(serverPort);

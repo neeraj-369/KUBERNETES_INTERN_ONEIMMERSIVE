@@ -2,7 +2,7 @@
 var enableRedirectionLinks = true;
 var enableRESTAPI = true;
 const session = require('express-session');
-const k8s = require('@kubernetes/client-node');
+const k8s = require("@kubernetes/client-node");
 const yaml = require('js-yaml');
 const kubeconfigText = `
 apiVersion: v1
@@ -30,7 +30,6 @@ const crypto = require('crypto');
 function generateRandomCode(length) {
   const charset = 'abcdefghijklmnopqrstuvwxyz0123456789';
   let randomCode = '';
-
   for (let i = 0; i < length; i++) {
     const randomIndex = crypto.randomInt(0, charset.length);
     randomCode += charset.charAt(randomIndex);
@@ -38,6 +37,12 @@ function generateRandomCode(length) {
 
   return randomCode;
 }
+
+
+const args = process.argv.slice(2);
+var namei = args[3];
+var registry = args[4];
+
 
 const kc = new k8s.KubeConfig();
 kc.loadFromString(kubeconfigText);
@@ -57,7 +62,7 @@ const jsonPod = {
 	  containers: [
 		{
 		  name: 'pixel-streaming-container',
-		  image: 'gaddamvinay/repo:finalgame',
+		  image: registry,
 		  args: [
 			'-PixelStreamingIp=app-service',
 			'-PixelStreamingPort=8888'
@@ -88,7 +93,7 @@ const jsonPod = {
 	apiVersion: 'apps/v1',
 	kind: 'Deployment',
 	metadata: {
-	  name: 'app-deployment',
+	  name: namei + '-app',
 	  labels: {
 		app: 'app'
 	  }
@@ -110,12 +115,15 @@ const jsonPod = {
 		  containers: [
 			{
 			  name: 'app-containers',
-			  image: 'neerajpolavarapu/ss:ss',
+			//   image: 'neerajpolavarapu/sig:ss',
+			  image: 'b0tastic/sig:ss',
+			  imagePullPolicy: 'Always',
 			  args: [
 				'coturn.tenant-74334f-oidev.lga1.ingress.coreweave.cloud:3478',
 				'PixelStreamingUser',
 				'AnotherTURNintheroad',
-				"hash"
+				'hash',
+				namei
 			  ],
 			  ports: [
 				{
@@ -172,8 +180,9 @@ const jsonPod = {
 		}
 	  }
 	}
-  };
-  
+};
+
+
 
 
   const jsonService = {
@@ -295,7 +304,7 @@ const jsonPod = {
 	  ]
 	}
   };
-  
+
 
 
 
@@ -331,6 +340,7 @@ if (config.LogToFile) {
 // A list of all the Cirrus server which are connected to the Matchmaker.
 var cirrusServers = new Map();
 
+let hashes = [];
 //
 // Parse command line.
 //
@@ -587,10 +597,7 @@ function checkPodCreationStatus() {
 </script>`);
 }
 
-app.get('/delayed-redirect', (req, res) => {
-	const redirectUrl = "timeapp.tenant-74334f-oidev.lga1.ingress.coreweave.cloud/" + hash;
-	res.redirect(redirectUrl)
-});
+
 
 // Get a Cirrus server if there is one available which has no clients connected.
 function getAvailableCirrusServer() {
@@ -636,9 +643,9 @@ function checkPodStatus(podName, tenantName) {
 		k8sApipp.readNamespacedPodStatus(podName, tenantName)
 		  .then((res) => {
 			const podStatus = res.body.status.phase;
-			console.log(`Current status of ${podName}: ${podStatus}`);
+			// console.log(`Current status of ${podName}: ${podStatus}`);
 			if (podStatus === 'Running') {
-			  console.log(`Pod ${podName} in ${tenantName} is now Running`);
+			//   console.log(`Pod ${podName} in ${tenantName} is now Running`);
 			  resolve(1); // Resolve the promise with status 1
 			} else {
 			  setTimeout(checkStatus, 500); // Continue checking after 5 seconds
@@ -684,9 +691,9 @@ app.use(express.json());
 app.post('/check-pod-creation-status', (req, res) => {
 	const { hash } = req.body; // Retrieve the hash value from the request body
 	const pp = "pixel-streaming-pod" + hash;
-	const dd = "app-deployment" + hash;
+	const dd = namei + "-app" + hash;
 	var podCreated = 0;
-  
+
 	checkPodStatus(pp, namespace)
 	  .then((status) => {
 		podCreated = status;
@@ -694,11 +701,9 @@ app.post('/check-pod-creation-status', (req, res) => {
 		checkDeploymentStatus(dd, namespace)
 		  .then((statusi) => {
 			deploymentCreated = statusi;
-  
 			const serviceCreated = 1; // checkServiceStatus(hash); // Implement the logic to check service creation status using the hash value
 			const ingressCreated = 1; // checkIngressStatus(hash); // Implement the logic to check ingress creation status using the hash value
-  
-			console.log(deploymentCreated);
+			// console.log(deploymentCreated);
 			res.json({
 			  podCreated,
 			  deploymentCreated,
@@ -722,18 +727,20 @@ app.use(session({
 	resave: false,
 	saveUninitialized: true
 }));
+
 if(enableRedirectionLinks) {
 	app.get('/', (req, res) => {
 		if (!req.session.greeted) {
 			req.session.greeted = true; 
 			var hash = "-" + generateRandomCode(15);
+			hashes.push(hash);
 			req.session.hash = hash;
 			sendRetryResponse(res, hash);
 			jsonPod.metadata.name = 'pixel-streaming-pod' + hash;
 			jsonPod.metadata.labels.app = 'app1' + hash;
 			jsonPod.spec.containers[0].name = 'pixel-streaming-container' + hash;
 			jsonPod.spec.containers[0].args[0] = '-PixelStreamingIp=app-service' + hash;
-			jsonDeployment.metadata.name = 'app-deployment' + hash;
+			jsonDeployment.metadata.name = namei + "-app" + hash;
 			jsonDeployment.metadata.labels.app = 'app' + hash;
 			jsonDeployment.spec.selector.matchLabels.app = 'app' + hash;
 			jsonDeployment.spec.template.metadata.labels.app = 'app' + hash;
@@ -745,7 +752,7 @@ if(enableRedirectionLinks) {
 			jsonIngress.spec.rules[0].host = "game" + hash + ".tenant-74334f-oidev.lga1.ingress.coreweave.cloud";
 			jsonIngress.spec.rules[0].http.paths[0].backend.service.name = 'app-service' + hash;
 			const podName = 'pixel-streaming-pod' + hash;
-			const deploymentName = 'app-deployment' + hash;
+			const deploymentName = namei + "-app" + hash;
 			const k8sApid = kc.makeApiClient(k8s.CoreV1Api);
 			k8sApid.createNamespacedPod(namespace, jsonPod).then((res) => {checkPodStatus(podName, namespace)});
 			const k8sApia = kc.makeApiClient(k8s.AppsV1Api);
@@ -757,102 +764,46 @@ if(enableRedirectionLinks) {
 		}
 		else {
 			var hash = req.session.hash;
-			deploymentNamei = "app-deployment" + hash;
-			const k8sApi = kc.makeApiClient(k8s.AppsV1Api);
-			const tenantname = 'tenant-74334f-oidev';
-			var stat = 0;
-			k8sApi.readNamespacedDeploymentStatus(deploymentNamei, tenantname)
-			  .then(response => {
-				const deploymentStatus = response.body.status;
-				if (deploymentStatus.conditions) {
-				  const terminatingCondition = deploymentStatus.conditions.find(
-					condition => condition.type === "Progressing" && condition.reason === "ProgressDeadlineExceeded"
-				  );
-				  if (terminatingCondition) {
-					stat = 0;
-					req.session.greeted = true; 
-					var hash = "-" + generateRandomCode(15);
-					req.session.hash = hash;
-					sendRetryResponse(res, hash);
-					jsonPod.metadata.name = 'pixel-streaming-pod' + hash;
-					jsonPod.metadata.labels.app = 'app1' + hash;
-					jsonPod.spec.containers[0].name = 'pixel-streaming-container' + hash;
-					jsonPod.spec.containers[0].args[0] = '-PixelStreamingIp=app-service' + hash;
-					jsonDeployment.metadata.name = 'app-deployment' + hash;
-					jsonDeployment.metadata.labels.app = 'app' + hash;
-					jsonDeployment.spec.selector.matchLabels.app = 'app' + hash;
-					jsonDeployment.spec.template.metadata.labels.app = 'app' + hash;
-					jsonDeployment.spec.template.spec.containers[0].name = 'app-containers' + hash;
-					jsonDeployment.spec.template.spec.containers[0].args[3] = hash;
-					jsonService.metadata.name = 'app-service' + hash;
-					jsonService.spec.selector.app = 'app' + hash;
-					jsonIngress.metadata.name = 'app-ingress' + hash;
-					jsonIngress.spec.rules[0].host = "game" + hash + ".tenant-74334f-oidev.lga1.ingress.coreweave.cloud";
-					jsonIngress.spec.rules[0].http.paths[0].backend.service.name = 'app-service' + hash;
-					const podName = 'pixel-streaming-pod' + hash;
-					const deploymentName = 'app-deployment' + hash;
-					const k8sApid = kc.makeApiClient(k8s.CoreV1Api);
-					k8sApid.createNamespacedPod(namespace, jsonPod).then((res) => {checkPodStatus(podName, namespace)});
-					const k8sApia = kc.makeApiClient(k8s.AppsV1Api);
-					k8sApia.createNamespacedDeployment(namespace, jsonDeployment).then((res) => {checkDeploymentStatus(deploymentName, namespace);});
-					const k8sApib = kc.makeApiClient(k8s.CoreV1Api);
-					k8sApib.createNamespacedService(namespace, jsonService);
-					const k8sApic = kc.makeApiClient(k8s.NetworkingV1Api);
-					k8sApic.createNamespacedIngress(namespace, jsonIngress);
-				  } else {
-					stat = 1;
-					var hash = req.session.hash;
-					sendRetryResponse(res, hash);
-				  }
-				} else {
-				  stat = 0;
-				  req.session.greeted = true; 
-				  var hash = "-" + generateRandomCode(15);
-				  req.session.hash = hash;
-				  sendRetryResponse(res, hash);
-				  jsonPod.metadata.name = 'pixel-streaming-pod' + hash;
-				  jsonPod.metadata.labels.app = 'app1' + hash;
-				  jsonPod.spec.containers[0].name = 'pixel-streaming-container' + hash;
-				  jsonPod.spec.containers[0].args[0] = '-PixelStreamingIp=app-service' + hash;
-				  jsonDeployment.metadata.name = 'app-deployment' + hash;
-				  jsonDeployment.metadata.labels.app = 'app' + hash;
-				  jsonDeployment.spec.selector.matchLabels.app = 'app' + hash;
-				  jsonDeployment.spec.template.metadata.labels.app = 'app' + hash;
-				  jsonDeployment.spec.template.spec.containers[0].name = 'app-containers' + hash;
-				  jsonDeployment.spec.template.spec.containers[0].args[3] = hash;
-				  jsonService.metadata.name = 'app-service' + hash;
-				  jsonService.spec.selector.app = 'app' + hash;
-				  jsonIngress.metadata.name = 'app-ingress' + hash;
-				  jsonIngress.spec.rules[0].host = "game" + hash + ".tenant-74334f-oidev.lga1.ingress.coreweave.cloud";
-				  jsonIngress.spec.rules[0].http.paths[0].backend.service.name = 'app-service' + hash;
-				  const podName = 'pixel-streaming-pod' + hash;
-				  const deploymentName = 'app-deployment' + hash;
-				  const k8sApid = kc.makeApiClient(k8s.CoreV1Api);
-				  k8sApid.createNamespacedPod(namespace, jsonPod).then((res) => {checkPodStatus(podName, namespace)});
-				  const k8sApia = kc.makeApiClient(k8s.AppsV1Api);
-				  k8sApia.createNamespacedDeployment(namespace, jsonDeployment).then((res) => {checkDeploymentStatus(deploymentName, namespace);});
-				  const k8sApib = kc.makeApiClient(k8s.CoreV1Api);
-				  k8sApib.createNamespacedService(namespace, jsonService);
-				  const k8sApic = kc.makeApiClient(k8s.NetworkingV1Api);
-				  k8sApic.createNamespacedIngress(namespace, jsonIngress);
-				}
-			});
-
-
+			if(hashes.includes(hash)){
+				sendRetryResponse(res, hash);
+			}
+			else {
+				var hash = "-" + generateRandomCode(15);
+				hashes.push(hash);
+				req.session.hash = hash;
+				sendRetryResponse(res, hash);
+				jsonPod.metadata.name = 'pixel-streaming-pod' + hash;
+				jsonPod.metadata.labels.app = 'app1' + hash;
+				jsonPod.spec.containers[0].name = 'pixel-streaming-container' + hash;
+				jsonPod.spec.containers[0].args[0] = '-PixelStreamingIp=app-service' + hash;
+				jsonDeployment.metadata.name = namei + '-app' + hash;
+				jsonDeployment.metadata.labels.app = 'app' + hash;
+				jsonDeployment.spec.selector.matchLabels.app = 'app' + hash;
+				jsonDeployment.spec.template.metadata.labels.app = 'app' + hash;
+				jsonDeployment.spec.template.spec.containers[0].name = 'app-containers' + hash;
+				jsonDeployment.spec.template.spec.containers[0].args[3] = hash;
+				jsonService.metadata.name = 'app-service' + hash;
+				jsonService.spec.selector.app = 'app' + hash;
+				jsonIngress.metadata.name = 'app-ingress' + hash;
+				jsonIngress.spec.rules[0].host = "game" + hash + ".tenant-74334f-oidev.lga1.ingress.coreweave.cloud";
+				jsonIngress.spec.rules[0].http.paths[0].backend.service.name = 'app-service' + hash;
+				const podName = 'pixel-streaming-pod' + hash;
+				const deploymentName = namei + "-app" + hash;
+				const k8sApid = kc.makeApiClient(k8s.CoreV1Api);
+				k8sApid.createNamespacedPod(namespace, jsonPod).then((res) => {checkPodStatus(podName, namespace)});
+				const k8sApia = kc.makeApiClient(k8s.AppsV1Api);
+				k8sApia.createNamespacedDeployment(namespace, jsonDeployment).then((res) => {checkDeploymentStatus(deploymentName, namespace);});
+				const k8sApib = kc.makeApiClient(k8s.CoreV1Api);
+				k8sApib.createNamespacedService(namespace, jsonService);
+				const k8sApic = kc.makeApiClient(k8s.NetworkingV1Api);
+				k8sApic.createNamespacedIngress(namespace, jsonIngress);
 		}
+
+	}
 }
 
 );
-	// Handle URL with custom HTML.
-	// app.get('/custom_html/:htmlFilename', (req, res) => {
-	// 	cirrusServer = getAvailableCirrusServer();
-	// 	if (cirrusServer != undefined) {
-	// 		res.redirect(`http://${cirrusServer.address}:${cirrusServer.port}/custom_html/${req.params.htmlFilename}`);
-	// 		console.log(`Redirect to ${cirrusServer.address}:${cirrusServer.port}`);
-	// 	} else {
-	// 		sendRetryResponse(res);
-	// 	}
-	// });
+
 }
 
 //
@@ -951,24 +902,62 @@ const matchmaker = net.createServer((connection) => {
 			}
 		} else if (message.type === 'clientDisconnected') {
 			// A client disconnects from a Cirrus server.
+			console.log("hello");
 			cirrusServer = cirrusServers.get(connection);
 			if(cirrusServer) {
+				console.log("hello");
+				console.log(cirrusServer);
+				console.log(cirrusServer.numConnectedClients)
 				cirrusServer.numConnectedClients--;
 				console.log(`Client disconnected from Cirrus server ${cirrusServer.address}:${cirrusServer.port}`);
 				if(cirrusServer.numConnectedClients === 0) {
+					let index = hashes.indexOf(cirrusServer.hash);
+					if (index !== -1) {
+						hashes.splice(index, 1);
+					}
+					console.log("adsf");
+					console.log(cirrusServer.hash);
 					const tenantname = 'tenant-74334f-oidev';
-					const k8sApi1 = kc.makeApiClient(k8s.CoreV1Api);
 					podNamei = "pixel-streaming-pod" + cirrusServer.hash;
-					deploymentNamei = "app-deployment" + cirrusServer.hash;
+					deploymentNamei = namei + "-app" + cirrusServer.hash;
 					serviceNamei = "app-service" + cirrusServer.hash;
 					ingressNamei = "app-ingress" + cirrusServer.hash;
+			
+					const k8sApi1 = kc.makeApiClient(k8s.CoreV1Api);
 					k8sApi1.deleteNamespacedPod(podNamei, tenantname)
+					  .then(() => {
+						console.log(`Deleted pod: ${podNamei}`);
+					  })
+					  .catch((error) => {
+						console.error(`Error deleting pod: ${error}`);
+					  });
+					
 					const k8sApi2 = kc.makeApiClient(k8s.AppsV1Api);
-					k8sApi2.deleteNamespacedDeployment(deploymentNamei, tenantname);
+					k8sApi2.deleteNamespacedDeployment(deploymentNamei, tenantname)
+					  .then(() => {
+						console.log(`Deleted deployment: ${deploymentNamei}`);
+					  })
+					  .catch((error) => {
+						console.error(`Error deleting deployment: ${error}`);
+					  });
+					
 					const k8sApi3 = kc.makeApiClient(k8s.CoreV1Api);
-					k8sApi3.deleteNamespacedService(serviceNamei, namespace);
+					k8sApi3.deleteNamespacedService(serviceNamei, tenantname)
+					  .then(() => {
+						console.log(`Deleted service: ${serviceNamei}`);
+					  })
+					  .catch((error) => {
+						console.error(`Error deleting service: ${error}`);
+					  });
+					
 					const k8sApi4 = kc.makeApiClient(k8s.NetworkingV1Api);
-					k8sApi4.deleteNamespacedIngress(ingressNamei, namespace);
+					k8sApi4.deleteNamespacedIngress(ingressNamei, tenantname)
+					  .then(() => {
+						console.log(`Deleted ingress: ${ingressNamei}`);
+					  })
+					  .catch((error) => {
+						console.error(`Error deleting ingress: ${error}`);
+					  });
 					// this make this server immediately available for a new client
 					cirrusServer.lastRedirect = 0;
 				}

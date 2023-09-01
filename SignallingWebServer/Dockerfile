@@ -23,3 +23,5 @@ EXPOSE 9999
 
 # Set the signalling server as the container's entrypoint
 ENTRYPOINT ["/usr/local/bin/node", "/opt/SignallingWebServer/cirrus.js"]
+
+CMD ["url" , "user" , "password", "hash"]

@@ -1,6 +1,6 @@
 {
 	"UseFrontend": false,
-	"UseMatchmaker": false,
+	"UseMatchmaker": true,
 	"UseHTTPS": false,
 	"UseAuthentication": false,
 	"LogToFile": true,
@@ -8,7 +8,7 @@
 	"HomepageFile": "player.html",
 	"AdditionalRoutes": {},
 	"EnableWebserver": true,
-	"MatchmakerAddress": "",
+	"MatchmakerAddress": "mm-service",
 	"MatchmakerPort": "9999",
 	"PublicIp": "localhost",
 	"HttpPort": 80,
